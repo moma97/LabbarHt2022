@@ -1,0 +1,18 @@
+﻿<Window x:Class="Uppgift_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Uppgift_3"
+        mc:Ignorable="d"
+        Title="Dubbelknapparna" Height="150" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="363*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="Knapp1" Grid.Column="1" Content="Oklickad" HorizontalAlignment="Left" Margin="64,27,0,0" VerticalAlignment="Top" Height="40" Width="104" Click="Knapp1_Click"/>
+        <Button x:Name="Knapp2" Grid.Column="1" Content="Oklickad" HorizontalAlignment="Left" Margin="254,27,0,0" VerticalAlignment="Top" Height="40" Width="94" Click="Knapp2_Click"/>
+
+    </Grid>
+</Window>
