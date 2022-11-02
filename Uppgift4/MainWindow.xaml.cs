@@ -28,6 +28,12 @@ namespace Uppgift_4
         private void knapp_Click(object sender, RoutedEventArgs e)
         {
             label.Visibility = Visibility.Visible;
+
+            knapp.Content = "Dölj lösenord";
+
+
+            
+                
         }
     }
 }

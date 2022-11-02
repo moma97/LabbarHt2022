@@ -30,8 +30,17 @@ namespace Uppgift5
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            // int är data typ number1 variabelnamn, efter = har vi tilldelat värde 
 
-            int result = int.Parse(txt1.Text) + int.Parse(txt2.Text);
+          
+            
+            int number1 = int.Parse(txtnumber1.Text);
+            int number2 = int.Parse(txtnumber2.Text);
+
+            int result = number1 + number2;
+           
+            
+            
             txtresult.Text = result.ToString(); 
                    
             
@@ -39,8 +48,8 @@ namespace Uppgift5
 
         private void btnclear_Click(object sender, RoutedEventArgs e)
         {
-            txt1.Clear();
-            txt2.Clear();
+            txtnumber1.Clear();
+            txtnumber2.Clear();
             txtresult.Clear();
         }
     }
