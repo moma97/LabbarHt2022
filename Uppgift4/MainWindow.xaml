@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Hemligt" Height="450" Width="800">
     <Grid>
-        <Button x:Name="knapp" Content="Visa lösenord" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Height="43" Width="180" Click="knapp_Click"/>
+        <Button x:Name="btn" Content="Visa lösenord" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Height="43" Width="180" Click="knapp_Click"/>
         <Label x:Name="label" Content="Sesam öppna dig!" HorizontalAlignment="Center" Margin="0,149,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
 
     </Grid>

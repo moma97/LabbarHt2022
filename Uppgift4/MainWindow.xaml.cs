@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -29,11 +30,30 @@ namespace Uppgift_4
         {
             label.Visibility = Visibility.Visible;
 
-            knapp.Content = "Dölj lösenord";
+            //btn.Content = "Visa lösenord";
+
+            if (btn.Content == "Visa lösenord")
+            {
 
 
-            
+                btn.Content = "Dölj lösenord";
                 
+
+            }
+
+
+            else 
+            {
+                btn.Content = "Visa lösenord";
+
+                label.Visibility = Visibility.Collapsed;
+
+
+            }
+
+
+
+
         }
     }
 }
