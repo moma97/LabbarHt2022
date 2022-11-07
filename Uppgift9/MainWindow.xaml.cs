@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Uppgift_4
+namespace Uppgift9
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,36 +23,6 @@ namespace Uppgift_4
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void knapp_Click(object sender, RoutedEventArgs e)
-        {
-          
-
-            
-
-            if (btn.Content == "Visa lösenord")
-            {
-                label.Visibility = Visibility.Visible;
-
-                btn.Content = "Dölj lösenord";
-                
-
-            }
-
-
-            else 
-            {
-                btn.Content = "Visa lösenord";
-
-                label.Visibility = Visibility.Collapsed;
-
-
-            }
-
-
-
-
         }
     }
 }
