@@ -20,12 +20,11 @@ namespace Uppgift9
     /// </summary>
     public partial class MainWindow : Window
     {
+        // deklaraera datatyp, variebel namn samt värden 
 
-        double Galleoner = 1;
-        double Sikel = 17;
-        double Knuting = 493;
-        double SvenskaKronor = 62.02;
-        double exchangerategall = 0.0161;
+        double exchangerategall = 0.01612383102225;
+        double exchangeratesikel = 0.274105127378265;
+        double exchangerateknut = 7.949048693969687;
 
 
         public MainWindow()
@@ -37,14 +36,47 @@ namespace Uppgift9
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            // ta värde från text ruta, geonomför uträkning, se till att svaret blir i hela kronor
+
             double Galleoner = double.Parse(txtGalleoner.Text);
 
-            lblsumma.Content = Galleoner / exchangerategall;
+            double ResultGalleoner = Galleoner / exchangerategall;
 
-            
 
-                 //double Sikel = double.Parse(txtSiklar.Text.ToString);
-           // double Knuting = double.Parse(txtKnutar.Text);
+            ResultGalleoner = Math.Round(ResultGalleoner, 0);
+
+
+
+
+            double Sikel = double.Parse(txtSiklar.Text);
+
+            double ResultSikel = Sikel / exchangeratesikel;
+
+            ResultSikel = Math.Round(ResultSikel, 0);
+
+
+
+
+            double Knuting = double.Parse(txtKnutar.Text);
+
+            double ResultKnutingar = Knuting / exchangerateknut;
+
+            ResultKnutingar = Math.Round(ResultKnutingar, 0);
+
+
+            lblsumma.Content = ResultSikel + ResultGalleoner + ResultKnutingar + " SEK";
+
+
+
+            //Smidigare lösning efter studiegrupp 
+
+            //  double sek = (Galleoner / exchangerategall) + (Sikel / exchangeratesikel) + (Knuting / exchangerateknut);
+
+            //  sek = Math.Round(sek, 0);
+
+            //  lblsumma.Content = sek + "SEK"; 
+
+
         }
     }
 }
