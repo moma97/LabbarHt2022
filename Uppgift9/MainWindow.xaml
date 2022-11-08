@@ -8,12 +8,12 @@
         Title="Bankomat" Height="450" Width="800">
     <Grid>
         <TextBox x:Name="txtGalleoner" HorizontalAlignment="Left" Margin="64,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Siklar" HorizontalAlignment="Left" Margin="64,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Knutar" HorizontalAlignment="Left" Margin="64,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtSiklar" HorizontalAlignment="Left" Margin="64,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtKnutar" HorizontalAlignment="Left" Margin="64,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Galleoner" HorizontalAlignment="Left" Margin="64,69,0,0" VerticalAlignment="Top"/>
         <Label Content="Siklar" HorizontalAlignment="Left" Margin="64,154,0,0" VerticalAlignment="Top"/>
         <Label Content="Knutar" HorizontalAlignment="Left" Margin="64,244,0,0" VerticalAlignment="Top"/>
-        <Button Content="Konvertera" HorizontalAlignment="Left" Margin="62,319,0,0" VerticalAlignment="Top" Height="24" Width="84"/>
+        <Button Content="Konvertera" HorizontalAlignment="Left" Margin="62,319,0,0" VerticalAlignment="Top" Height="24" Width="84" Click="Button_Click"/>
         <Label x:Name="lblsumma" HorizontalAlignment="Left" Margin="185,319,0,0" VerticalAlignment="Top" Width="62"/>
 
     </Grid>
