@@ -38,17 +38,11 @@ namespace Uppgift10a
 
             if (age < 7 && rdmedvuxen.IsChecked == true)
             
-
-
                 txtblock.Text = ($"Hej {txtname.Text}. Du är {txtage.Text} år gammal och får se filmer med åldersgräns upp till 7 år eftersom du har en vuxen med dig");
 
+             else
 
-
-            else
-
-
-
-                    txtblock.Text = ($"Hej {txtname.Text}. Du är {txtage.Text} år gammal och du får se barntillåtna filmer men du måste ha med en vuxen för att få se filmer med 7 års åldersgräns");
+                   txtblock.Text = ($"Hej {txtname.Text}. Du är {txtage.Text} år gammal och du får se barntillåtna filmer men du måste ha med en vuxen för att få se filmer med 7 års åldersgräns");
 
 
 
