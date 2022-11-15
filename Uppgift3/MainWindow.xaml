@@ -11,7 +11,7 @@
             <ColumnDefinition Width="37*"/>
             <ColumnDefinition Width="363*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="Knapp1" Grid.Column="1" Content="Oklickad" HorizontalAlignment="Left" Margin="64,27,0,0" VerticalAlignment="Top" Height="40" Width="104" Click="Knapp1_Click"/>
+        <Button x:Name="Knapp1" Grid.Column="1" Content="Oklickad" HorizontalAlignment="Left" Margin="64,27,0,0" VerticalAlignment="Top" Height="40" Width="104" Click="Knapp1_Click" Background="#FFDDDDDD"/>
         <Button x:Name="Knapp2" Grid.Column="1" Content="Oklickad" HorizontalAlignment="Left" Margin="254,27,0,0" VerticalAlignment="Top" Height="40" Width="94" Click="Knapp2_Click"/>
 
     </Grid>

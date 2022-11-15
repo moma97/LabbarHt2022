@@ -24,20 +24,22 @@ namespace Uppgift11
     {
 
         int antalklickar = 0;
-
+        
 
         public MainWindow()
         {
             InitializeComponent();
 
+
             btnguess.IsEnabled = false;
 
 
-           
 
-            
+
 
         }
+
+        
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -52,12 +54,16 @@ namespace Uppgift11
 
             btnguess.IsEnabled = true;
 
-
+            btnslumpa.IsEnabled = false; 
 
         }
 
         private void btnguess_Click(object sender, RoutedEventArgs e)
         {
+
+
+
+
             // datatyper variabler 
 
             int slumptal = int.Parse((string)lbltemp.Content);
@@ -67,7 +73,7 @@ namespace Uppgift11
 
             //Från FL 2
 
-            antalklickar += 1; 
+            antalklickar += 1;
 
 
 
@@ -79,7 +85,7 @@ namespace Uppgift11
 
             bool GuessIsWithinOneHundredSmaller = slumptal - guess < 0 && slumptal - guess > (-100);
 
-            
+
             // if satser beroende på vad man gissar
 
             if (!GuessIsWithinOneHundred && !GuessIsWithinOneHundredSmaller && guess > slumptal)
@@ -105,10 +111,14 @@ namespace Uppgift11
 
             if (guess == slumptal)
 
-
+            { 
                 txtblock.Text = ($"Din gissning är korrekt! Du gissade rätt efter {antalklickar} antal gissningar :)");
 
+                btnslumpa.IsEnabled = true;
+                btnguess.IsEnabled = false;
 
+            }
+           
 
 
         }

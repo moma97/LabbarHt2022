@@ -1,0 +1,25 @@
+﻿<Window x:Class="uppgift_12.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:uppgift_12"
+        mc:Ignorable="d"
+        Title="Smörgåsen" Height="413" Width="375">
+    <Grid Margin="0,0,0,-6">
+        <Label Content="Oturskalkylatorn" HorizontalAlignment="Left" Margin="35,41,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="41" Width="174" FontSize="20"/>
+        <ProgressBar x:Name="pBar" HorizontalAlignment="Left" Height="42" Margin="80,111,0,0" VerticalAlignment="Top" Width="180" Maximum="100" Minimum="0" Value="50"/>
+        <Button x:Name="btnlessunlucky" Content="Mindre &#xD;&#xA;Otur" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top" Height="42" Width="51" Click="btnlessunlucky_Click"/>
+        <Button x:Name="btnmoreunlucky" Content="Mer &#xD;&#xA;otur" HorizontalAlignment="Left" Margin="282,111,0,0" VerticalAlignment="Top" Height="42" Width="54" Click="btnmoreunlucky_Click"/>
+
+        <Label Content="Utfall" HorizontalAlignment="Left" Margin="10,264,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" RenderTransformOrigin="1.395,0.55"/>
+        <TextBox x:Name="txttries" Text="0" HorizontalAlignment="Left" Margin="10,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Height="28"/>
+        <Button x:Name="btnstart" Content="Starta" HorizontalAlignment="Left" Margin="170,211,0,0" VerticalAlignment="Top" Width="106" Height="28" Click="btnstart_Click"/>
+        <Label x:Name="lblup" Content=" " HorizontalAlignment="Left" Margin="12,300,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbldown" Content="" HorizontalAlignment="Left" Margin="12,326,0,0" VerticalAlignment="Top"/>
+        <Label Content="Antal försök" HorizontalAlignment="Left" Margin="10,168,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="lblvalue" Content="" HorizontalAlignment="Left" Margin="223,82,0,0" VerticalAlignment="Top"/>
+
+
+    </Grid>
+</Window>

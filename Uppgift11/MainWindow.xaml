@@ -9,7 +9,7 @@
     <Grid>
         <Label Content="Gissning" HorizontalAlignment="Left" Margin="73,60,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtguess" HorizontalAlignment="Left" Margin="73,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="0"/>
-        <Button Content="Slumpa tal" HorizontalAlignment="Left" Margin="220,91,0,0" VerticalAlignment="Top" Width="105" Click="Button_Click"/>
+        <Button x:Name="btnslumpa" Content="Slumpa tal" HorizontalAlignment="Left" Margin="220,91,0,0" VerticalAlignment="Top" Width="105" Click="Button_Click"/>
         <Button x:Name="btnguess" Content="Gissa" HorizontalAlignment="Left" Margin="73,147,0,0" VerticalAlignment="Top" Width="127" Click="btnguess_Click"/>
         <TextBlock x:Name="txtblock" HorizontalAlignment="Left" Margin="73,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" Height="94"/>
         <Label x:Name="lbltemp" Content="" HorizontalAlignment="Left" Margin="330,88,0,0" VerticalAlignment="Top" Width="60" Visibility="Hidden"/>
