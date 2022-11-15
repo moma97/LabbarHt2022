@@ -11,6 +11,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
@@ -22,12 +23,20 @@ namespace Uppgift11
     public partial class MainWindow : Window
     {
 
-
+        int antalklickar = 0;
 
 
         public MainWindow()
         {
             InitializeComponent();
+
+            btnguess.IsEnabled = false;
+
+
+           
+
+            
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -38,34 +47,67 @@ namespace Uppgift11
             int slumptal=slump.Next(1000);
 
             lbltemp.Content = slumptal.ToString();
-              
+
+            
+
+            btnguess.IsEnabled = true;
+
+
 
         }
 
         private void btnguess_Click(object sender, RoutedEventArgs e)
         {
+            // datatyper variabler 
 
             int slumptal = int.Parse((string)lbltemp.Content);
 
             lbltemp.Content = slumptal.ToString();
 
 
+            //Från FL 2
+
+            antalklickar += 1; 
+
+
+
             int guess = int.Parse(txtguess.Text);
 
+            bool GuessIsWithinOneHundred = slumptal - guess > 0 && slumptal - guess < 100;
 
-            if (guess > slumptal)
+            // det ska bli negativt tal om gissningen är större än slumptalet 
+
+            bool GuessIsWithinOneHundredSmaller = slumptal - guess < 0 && slumptal - guess > (-100);
+
+            
+            // if satser beroende på vad man gissar
+
+            if (!GuessIsWithinOneHundred && !GuessIsWithinOneHundredSmaller && guess > slumptal)
 
                 txtblock.Text = ("Oh, du är inte ens nära. Du gissade alldeles för stort");
 
-            if (guess < slumptal)
+            if (GuessIsWithinOneHundredSmaller)
+
+
+                txtblock.Text = ("Du är nära men gissade för stort");
+
+
+
+            if (!GuessIsWithinOneHundred && guess < slumptal)
 
                 txtblock.Text = ("Oh, du är inte ens nära. Du gissade alldeles för litet");
+
+            if (GuessIsWithinOneHundred)
+
+
+                txtblock.Text = ("Du är nära men gissade för litet");
 
 
             if (guess == slumptal)
 
 
-                txtblock.Text = ("Din gissning är korrekt! :)");
+                txtblock.Text = ($"Din gissning är korrekt! Du gissade rätt efter {antalklickar} antal gissningar :)");
+
 
 
 

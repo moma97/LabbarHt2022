@@ -29,9 +29,6 @@ namespace Uppgift_4
         private void knapp_Click(object sender, RoutedEventArgs e)
         {
           
-
-            
-
             if (btn.Content == "Visa lösenord")
             {
                 label.Visibility = Visibility.Visible;
