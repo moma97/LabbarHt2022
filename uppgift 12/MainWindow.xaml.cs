@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Runtime.ExceptionServices;
@@ -46,15 +47,22 @@ namespace uppgift_12
             int up = 0;
             int down = 0;
 
+            int probability;
+            probability = (int)pBar.Value;
+
             
+            
+
 
             Random upOrDown = new Random();
 
             for (int i = 0; i < antaltries; i++)
             {
-                int resultat = upOrDown.Next(1, 3); //1, 3
+                int resultat = upOrDown.Next(1, 101); //1, 3
+               
+                //om resultatet (det randomiserade numret) är större än pBar värdet 
 
-                if (resultat == 1)  //1
+                if (resultat > probability)  //1  51-100
                 {
 
                     up++;
@@ -75,22 +83,6 @@ namespace uppgift_12
 
 
             }
-
-
-        //använda mig av procenten som visas i labeln på progressbaren, använda den procenten för att räkna ut nya chansen
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         }
