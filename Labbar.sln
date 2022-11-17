@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uppgift 12", "uppgift 12\up
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uppgift 13", "Uppgift 13\Uppgift 13.csproj", "{6882A6D0-036A-4BA1-9435-4F7A328FD95C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uppgift 14", "uppgift 14\uppgift 14.csproj", "{EE2F2840-C0F2-4205-9C18-295C789B5CF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndexTest", "IndexTest\IndexTest.csproj", "{67867A76-73D2-4339-B573-5B526BAB390B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +85,14 @@ Global
 		{6882A6D0-036A-4BA1-9435-4F7A328FD95C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6882A6D0-036A-4BA1-9435-4F7A328FD95C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6882A6D0-036A-4BA1-9435-4F7A328FD95C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE2F2840-C0F2-4205-9C18-295C789B5CF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE2F2840-C0F2-4205-9C18-295C789B5CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE2F2840-C0F2-4205-9C18-295C789B5CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE2F2840-C0F2-4205-9C18-295C789B5CF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67867A76-73D2-4339-B573-5B526BAB390B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67867A76-73D2-4339-B573-5B526BAB390B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67867A76-73D2-4339-B573-5B526BAB390B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67867A76-73D2-4339-B573-5B526BAB390B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
