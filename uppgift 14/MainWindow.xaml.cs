@@ -33,26 +33,25 @@ namespace uppgift_14
         private void btnok_Click(object sender, RoutedEventArgs e)
         {
 
-            int[] values = { 0, 1, 2, 3, 4 };
+            int[] values = new int[5]; // fem heltal
 
             int input = int.Parse(txtnumber.Text);
 
+         
+          
             
+            values[0] = input;
+            values[1] = input;
+            values[2] = input;
+            values[3] = input;
+            values[4] = input;
+
 
             listBoxValues.ItemsSource = null;
             listBoxValues.ItemsSource = values;
 
-          
-            
-                values[0] = input;
-            
 
-                
-
-
-         
-            
-                //MessageBox.Show(values.ToString());
+            //MessageBox.Show(values.ToString());
 
 
             //  antalggrklickat++; //öka med 1 steg

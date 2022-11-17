@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uppgift 14", "uppgift 14\up
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndexTest", "IndexTest\IndexTest.csproj", "{67867A76-73D2-4339-B573-5B526BAB390B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uppgift 15", "uppgift 15\uppgift 15.csproj", "{5F174962-DDE0-42C9-91CB-2EF30018C16E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{67867A76-73D2-4339-B573-5B526BAB390B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67867A76-73D2-4339-B573-5B526BAB390B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67867A76-73D2-4339-B573-5B526BAB390B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F174962-DDE0-42C9-91CB-2EF30018C16E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F174962-DDE0-42C9-91CB-2EF30018C16E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F174962-DDE0-42C9-91CB-2EF30018C16E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F174962-DDE0-42C9-91CB-2EF30018C16E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
