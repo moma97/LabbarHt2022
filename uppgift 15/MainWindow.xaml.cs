@@ -32,7 +32,7 @@ namespace uppgift_15
         {
             char letter;
             string textinput;
-            int freq = 0;
+            int count = 0;
 
             textinput = txtinput.Text;
             letter = char.Parse(txtletter.Text);
@@ -41,12 +41,12 @@ namespace uppgift_15
             {
                 if (textinput[i] == letter)
 
-                    freq++;
+                    count++;
 
             }
 
 
-            lblresult.Content = ($"Hittade bokstaven {letter} {freq} gånger");
+            lblresult.Content = ($"Hittade bokstaven {letter} {count} gånger");
 
         }
     }
