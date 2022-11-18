@@ -21,45 +21,58 @@ namespace uppgift_14
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        double[] values = new double[5]; //clean code, global 
+        
 
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        //new int[4];
+       
 
         private void btnok_Click(object sender, RoutedEventArgs e)
-        {
+        {                  
 
-            int[] values = new int[5]; // fem heltal
+            double input = double.Parse(txtnumber.Text);
+            listBoxValues.Items.Add(input);    //förstod mig inte på itemsSource så jag plockade bort det och använde mig av dessa istället
 
-            int input = int.Parse(txtnumber.Text);
-
-         
-          
+            if (listBoxValues.Items.Count == 5 )  // count är en inbyggd funktion som räknar 
             
-            values[0] = input;
-            values[1] = input;
-            values[2] = input;
-            values[3] = input;
-            values[4] = input;
+            {
+
+                for (int i = 0; i < listBoxValues.Items.Count; i++)
+                {
+
+                    values[i] = double.Parse(listBoxValues.Items[i].ToString());
+
+                }
 
 
-            listBoxValues.ItemsSource = null;
-            listBoxValues.ItemsSource = values;
+            }
+
+            if (listBoxValues.Items.Count >= 5 ) 
+            
+            { 
+                btnok.IsEnabled= false;
+                btnreset.Visibility = Visibility.Visible;
+
+            }
 
 
-            //MessageBox.Show(values.ToString());
+            double mean = values.Sum();
+            txtmedel.Text = (mean / 5).ToString();
+                     
+        }
 
-
-            //  antalggrklickat++; //öka med 1 steg
-
-            //MessageBox.Show(antalggrklickat.ToString()); ;
-
-
-
+        private void btnreset_Click(object sender, RoutedEventArgs e)
+        {
+            listBoxValues.Items.Clear();
+            txtnumber.Text = string.Empty;
+            txtmedel.Text = string.Empty;
+            txtnumber.Focus();
+            btnok.IsEnabled= true;
+            btnreset.Visibility= Visibility.Hidden;
         }
     }
 

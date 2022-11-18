@@ -21,6 +21,7 @@
         <Button x:Name="btnok" Content="Ok" HorizontalAlignment="Left" Margin="212,88,0,0" VerticalAlignment="Top" Width="70" Click="btnok_Click"/>
         <ListBox x:Name="listBoxValues" Margin="296,86,385,224"/>
         <Label Content="Totala medelvärde" HorizontalAlignment="Left" Margin="77,142,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnreset" Content="Nollställ" HorizontalAlignment="Left" Margin="212,127,0,0" VerticalAlignment="Top" Width="70" Click="btnreset_Click" Visibility="Hidden" />
 
     </Grid>
 </Window>
