@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:uppgift_15"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Bokstavssök" Height="450" Width="300">
     <Grid>
+        <Label Content="Fyll i text" HorizontalAlignment="Left" Margin="53,78,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtinput" HorizontalAlignment="Left" Margin="53,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214" VerticalScrollBarVisibility="Auto" Height="141" AcceptsReturn="True"/>
+        <Label Content="Sök efter" HorizontalAlignment="Left" Margin="53,286,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtletter" HorizontalAlignment="Left" Margin="53,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblresult" Content="Label" HorizontalAlignment="Left" Margin="53,351,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btncalc" Content="Räkna" HorizontalAlignment="Left" Margin="201,317,0,0" VerticalAlignment="Top" Width="66" Click="btncalc_Click"/>
 
     </Grid>
 </Window>

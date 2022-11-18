@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Accessibility;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,33 @@ namespace uppgift_15
     /// </summary>
     public partial class MainWindow : Window
     {
+        
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btncalc_Click(object sender, RoutedEventArgs e)
+        {
+            char letter;
+            string textinput;
+            int freq = 0;
+
+            textinput = txtinput.Text;
+            letter = char.Parse(txtletter.Text);
+
+            for (int i = 0; i < textinput.Length; i++)
+            {
+                if (textinput[i] == letter)
+
+                    freq++;
+
+            }
+
+
+            lblresult.Content = ($"Hittade bokstaven {letter} {freq} gånger");
+
         }
     }
 }
