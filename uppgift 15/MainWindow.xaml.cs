@@ -30,12 +30,12 @@ namespace uppgift_15
 
         private void btncalc_Click(object sender, RoutedEventArgs e)
         {
-            char letter;
-            string textinput;
+            char letter = char.Parse(txtletter.Text);
+            string textinput = txtinput.Text; //en array i sig själv
             int count = 0;
 
-            textinput = txtinput.Text;
-            letter = char.Parse(txtletter.Text);
+           
+          
 
             for (int i = 0; i < textinput.Length; i++)
             {
