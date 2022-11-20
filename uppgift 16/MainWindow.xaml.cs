@@ -87,7 +87,7 @@ namespace uppgift_16
                 {
                     return false;
 
-                    //MessageBox.Show("enbart siffror");
+                 
 
 
                 }
@@ -98,15 +98,6 @@ namespace uppgift_16
             
             
             return true;
-
-            //MessageBox.Show("beräkna år");
-
-
-
-
-            //MessageBox.Show(result.ToString());
-                             
-            //return result;
 
            
 
