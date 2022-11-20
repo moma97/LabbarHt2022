@@ -50,7 +50,7 @@ namespace uppgift_16
         }
 
         /// <summary>
-        /// går igenom texten, 
+        /// går igenom texten, returnerar olika värden baserat på om det finns bokstav eller inte
         /// </summary>
         /// <param name="myText"></param>
         /// <returns></returns>
