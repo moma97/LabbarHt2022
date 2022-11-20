@@ -33,10 +33,8 @@ namespace uppgift_15
             char letter = char.Parse(txtletter.Text);
             string textinput = txtinput.Text; //en array i sig själv
             int count = 0;
-
-           
+                       
           
-
             for (int i = 0; i < textinput.Length; i++)
             {
                 if (textinput[i] == letter)

@@ -27,6 +27,11 @@ namespace Uppgift17
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Räknar ut hur många vokaler som finns i texten
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
         private int NumberOfVowels(string text)
         {
             char[] bigVowels = new char[] { 'A', 'O', 'U', 'Å', 'E', 'I', 'Y', 'Ä', 'Ö' };
@@ -41,6 +46,11 @@ namespace Uppgift17
             return count;
         }
 
+        /// <summary>
+        /// inkluderar stora bokstäver, introducerar ny variabel och använder tidigare metod IsVowels för att byta ut bokstäverna
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
         private string Jibberish(string text)
         {
             char[] bigVowels = new char[] {'A', 'O', 'U', 'Å', 'E', 'I', 'Y', 'Ä', 'Ö'};
@@ -71,7 +81,11 @@ namespace Uppgift17
         }
 
 
-
+        /// <summary>
+        /// bestämmer vilka bokstäver i strängen som är vokaler, går igenom bokstäverna i arrayen 
+        /// </summary>
+        /// <param name="asdText"></param>
+        /// <returns></returns>
         private bool IsVowels(char asdText)
         {
             for (int i = 0; i < vowels.Length; i++)
@@ -85,7 +99,11 @@ namespace Uppgift17
            return false;
 
         }
-
+        /// <summary>
+        /// skriver ut resultaten
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnconvert_Click(object sender, RoutedEventArgs e)
         {
             string myText = txtboxinput.Text;

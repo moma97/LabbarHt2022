@@ -31,15 +31,11 @@ namespace uppgift_16
         private void btncalc_Click(object sender, RoutedEventArgs e)
         {
             
-
-
             string text = txtinput.Text;
-
-
 
             OnlyLettersInBirthyear(text);
 
-            if (OnlyLettersInBirthyear(text))
+            if (OnlyLettersInBirthyear(text) == true)
             {
                 int age = CalcAge(int.Parse(text));
                 MessageBox.Show($"Du är {age} år gammal");
@@ -51,65 +47,38 @@ namespace uppgift_16
                 MessageBox.Show("Du måste mata in enbart siffror");
             }
 
-
-
-
         }
 
-
-
-
-
-
-
+        /// <summary>
+        /// går igenom texten, 
+        /// </summary>
+        /// <param name="myText"></param>
+        /// <returns></returns>
         private bool OnlyLettersInBirthyear(string myText)
         {
-
-            string input = txtinput.Text;
-
-            char[] array = input.ToCharArray();
-
-            bool result;
-
-            for (int i = 0; i < array.Length; i++)
-
+            foreach (char c in myText)
             {
-                array[i] = myText[i];
-
-            }
-
-
-                foreach (char c in myText)
-            {
-
 
                 if (char.IsLetter(c))
                 {
                     return false;
-
-                 
-
-
+                                   
                 }
 
             }
-           
-            
-            
-            
+                   
             return true;
-
-           
-
-
+                      
         }
 
-
+        /// <summary>
+        /// Genomför beräkningen för din ålder
+        /// </summary>
+        /// <param name="birthYear"></param>
+        /// <returns></returns>
         private int CalcAge(int birthYear)
 
         {
-
-
             int yearNow = DateTime.Now.Year;
 
             int age = yearNow - birthYear;
