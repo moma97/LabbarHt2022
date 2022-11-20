@@ -20,8 +20,9 @@ namespace uppgift_16
     /// </summary>
     public partial class MainWindow : Window
     {
-        char birthYear;
-
+       
+        int age;
+        int birthYear;
         public MainWindow()
         {
             InitializeComponent();
@@ -29,72 +30,104 @@ namespace uppgift_16
 
         private void btncalc_Click(object sender, RoutedEventArgs e)
         {
-            // när knappen klickas på vill jag beräkna åldern utifrån födelseåret
-
-
-
-
-
-            OnlyLettersInBirthyear();
-
-
-
-        }
-
-
-
-
-
-
-
-        private void OnlyLettersInBirthyear()
-        {
-
-            //bool isItALetter;
-            char input = char.Parse(txtinput.Text);
-
-            MessageBox.Show(char.IsLetter(input).ToString());
-
-            char.IsLetter(input);
-
-            //string textinput = txtinput.Text;
-            //bool isaLetter(char c);
-
             
-            //isItALetter = 
-
-            //Char.IsLetter(input);
-            // tror även det endast är första bokstaven den går utifrån                  
 
 
-
-            //for (int i = 0; i < textinput.Length; i++)
-            //{
-            //    Char.IsLetter(textinput);
-
-            //    if (true)
-
-            //    {
-            //        MessageBox.Show("Du måste mata in enbart siffror");
-            //    }
-
-            //    else
-            //        MessageBox.Show("Du har enbart matat in siffror");
+            string text = txtinput.Text;
 
 
 
+            OnlyLettersInBirthyear(text);
 
+            if (OnlyLettersInBirthyear(text))
+            {
+                int age = CalcAge(int.Parse(text));
+                MessageBox.Show($"Du är {age} år gammal");
 
+            }
+            else if (OnlyLettersInBirthyear(text) == false)
+            {
 
-
-
-
+                MessageBox.Show("Du måste mata in enbart siffror");
             }
 
 
 
+
         }
 
 
 
+
+
+
+
+        private bool OnlyLettersInBirthyear(string myText)
+        {
+
+            string input = txtinput.Text;
+
+            char[] array = input.ToCharArray();
+
+            bool result;
+
+            for (int i = 0; i < array.Length; i++)
+
+            {
+                array[i] = myText[i];
+
+            }
+
+
+                foreach (char c in myText)
+            {
+
+
+                if (char.IsLetter(c))
+                {
+                    return false;
+
+                    //MessageBox.Show("enbart siffror");
+
+
+                }
+
+            }
+           
+            
+            
+            
+            return true;
+
+            //MessageBox.Show("beräkna år");
+
+
+
+
+            //MessageBox.Show(result.ToString());
+                             
+            //return result;
+
+           
+
+
+        }
+
+
+        private int CalcAge(int birthYear)
+
+        {
+
+
+            int yearNow = DateTime.Now.Year;
+
+            int age = yearNow - birthYear;
+
+            return age;
+
+        }
     }
+
+
+
+}
