@@ -24,5 +24,45 @@ namespace HarryPotter
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Hufflepuff hufflepuff = new Hufflepuff();
+
+            hufflepuff.HasCorrectPasswordFormat("en ensam trollkarl");
+
+            hufflepuff.HasCorrectPasswordFormat("en ensam trollkvinna");
+
+            //SetPassword(string currentPassword, string newPassword)
+
+            hufflepuff.SetPassword("en ensam trollkarl", "alla får vara med");  //den byter faktiskt lösenordet, men endast i knappklicket.
+
+          
+            
+            
+            
+            Gryffindor gryffindor = new Gryffindor();
+
+            gryffindor.HasCorrectPasswordFormat("en hårig älg"); //true
+            gryffindor.HasCorrectPasswordFormat("boken av häxkonst"); //false
+
+            gryffindor.SetPassword("en gullig gris", "en rolig räv"); //den byter lösenord
+
+
+
+            Ravenclaw ravenclaw = new Ravenclaw();
+
+            ravenclaw.HasCorrectPasswordFormat("en snäll kanin");  //true
+            ravenclaw.HasCorrectPasswordFormat("en taskig pojke"); //false
+
+            ravenclaw.SetPassword("öron vax", "en ful hörlur"); //byter lösen
+
+            
+            
+            Slytherin slytherin = new Slytherin(); 
+
+
+
+        }
     }
 }

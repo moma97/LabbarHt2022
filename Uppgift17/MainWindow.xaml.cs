@@ -99,6 +99,7 @@ namespace Uppgift17
            return false;
 
         }
+
         /// <summary>
         /// skriver ut resultaten
         /// </summary>
