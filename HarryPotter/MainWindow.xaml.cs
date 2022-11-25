@@ -29,22 +29,22 @@ namespace HarryPotter
         {
             Hufflepuff hufflepuff = new Hufflepuff();
 
-            hufflepuff.HasCorrectPasswordFormat("en ensam trollkarl");
-
-            hufflepuff.HasCorrectPasswordFormat("en ensam trollkvinna");
+            bool successh =hufflepuff.HasCorrectPasswordFormat("en ensam trollkarl"); //true
+                
+            successh =hufflepuff.HasCorrectPasswordFormat("en ensam trollkvinna");  //false
 
             //SetPassword(string currentPassword, string newPassword)
+            bool successf = hufflepuff.SetPassword("en ensam trollkarl", "alla får vara mea");   //false
+            successf = hufflepuff.SetPassword("en ensam trollkarl", "alla får vara med"); //true //den byter faktiskt lösenordet, men endast i knappklicket.
+            
 
-            hufflepuff.SetPassword("en ensam trollkarl", "alla får vara med");  //den byter faktiskt lösenordet, men endast i knappklicket.
 
-          
-            
-            
-            
+
+
             Gryffindor gryffindor = new Gryffindor();
 
-            gryffindor.HasCorrectPasswordFormat("en hårig älg"); //true
-            gryffindor.HasCorrectPasswordFormat("boken av häxkonst"); //false
+           bool successg = gryffindor.HasCorrectPasswordFormat("en hårig älg"); //true
+            successg = gryffindor.HasCorrectPasswordFormat("boken av häxkonst"); //false
 
             gryffindor.SetPassword("en gullig gris", "en rolig räv"); //den byter lösenord
 
@@ -59,8 +59,13 @@ namespace HarryPotter
 
             
             
-            Slytherin slytherin = new Slytherin(); 
+            Slytherin slytherin = new Slytherin();
 
+           bool success = slytherin.HasCorrectPasswordFormatSlyth("baaaaaaab"); // true
+            success = slytherin.HasCorrectPasswordFormatSlyth("eaaaaaae");  //false
+
+           bool ksuccess = slytherin.SetPasswordSlyth("cenblodig", "caaaaaac"); //true
+           ksuccess = slytherin.SetPasswordSlyth("cenblodiiiig", "cbbbbbbbc");  //false
 
 
         }

@@ -19,7 +19,12 @@ namespace HarryPotter
 
         public string Password { get; protected set; }
 
-      
+       /// <summary>
+       /// om nuvarande lösenord är samma och framtida lösnord fyller kritierier byt lösenord
+       /// </summary>
+       /// <param name="currentPassword"></param>
+       /// <param name="newPassword"></param>
+       /// <returns></returns>
         public bool SetPassword(string currentPassword, string newPassword)
         {
 
@@ -50,6 +55,11 @@ namespace HarryPotter
             return false;
         }
 
+        /// <summary>
+        /// kontrollerar att lösenordet har rätt format
+        /// </summary>
+        /// <param name="passwordatm"></param>
+        /// <returns></returns>
         public bool HasCorrectPasswordFormat(string passwordatm)
         {
             if (passwordatm.Length >= 5)
@@ -119,6 +129,11 @@ namespace HarryPotter
 
         }
 
+        /// <summary>
+        /// kontrollerar så att lösnordet är likadant som det nuvarande
+        /// </summary>
+        /// <param name="currentPassword"></param>
+        /// <returns></returns>
         public bool CurrentPassword(string currentPassword)
         {
 
