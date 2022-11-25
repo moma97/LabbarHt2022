@@ -25,7 +25,7 @@ namespace HarryPotter
        /// <param name="currentPassword"></param>
        /// <param name="newPassword"></param>
        /// <returns></returns>
-        public bool SetPassword(string currentPassword, string newPassword)
+        public virtual bool SetPassword(string currentPassword, string newPassword)
         {
 
             if (newPassword.Length >= 5)
@@ -56,11 +56,11 @@ namespace HarryPotter
         }
 
         /// <summary>
-        /// kontrollerar att lösenordet har rätt format
+        /// kontrollerar att lösenordet har rätt format, //lade till virtual efter inlämning
         /// </summary>
         /// <param name="passwordatm"></param>
         /// <returns></returns>
-        public bool HasCorrectPasswordFormat(string passwordatm)
+        public virtual bool HasCorrectPasswordFormat(string passwordatm)
         {
             if (passwordatm.Length >= 5)
             {

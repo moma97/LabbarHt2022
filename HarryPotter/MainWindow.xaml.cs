@@ -61,11 +61,11 @@ namespace HarryPotter
             
             Slytherin slytherin = new Slytherin();
 
-           bool success = slytherin.HasCorrectPasswordFormatSlyth("baaaaaaab"); // true
-            success = slytherin.HasCorrectPasswordFormatSlyth("eaaaaaae");  //false
+           bool success = slytherin.HasCorrectPasswordFormat("baaaaaaab"); // true
+            success = slytherin.HasCorrectPasswordFormat("eaaaaaae");  //false
 
-           bool ksuccess = slytherin.SetPasswordSlyth("cenblodig", "caaaaaac"); //true
-           ksuccess = slytherin.SetPasswordSlyth("cenblodiiiig", "cbbbbbbbc");  //false
+           bool ksuccess = slytherin.SetPassword("cenblodig", "caaaaaac"); //true
+           ksuccess = slytherin.SetPassword("cenblodiiiig", "cbbbbbbbc");  //false
 
 
         }
