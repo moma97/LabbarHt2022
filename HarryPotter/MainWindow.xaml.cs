@@ -27,7 +27,7 @@ namespace HarryPotter
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Hufflepuff hufflepuff = new Hufflepuff();
+            House hufflepuff = new Hufflepuff();
 
             bool successh =hufflepuff.HasCorrectPasswordFormat("en ensam trollkarl"); //true
                 
