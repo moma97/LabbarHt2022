@@ -41,16 +41,16 @@ namespace HarryPotter
 
 
 
-            Gryffindor gryffindor = new Gryffindor();
+            House gryffindor = new Gryffindor();
 
-           bool successg = gryffindor.HasCorrectPasswordFormat("en hårig älg"); //true
+            bool successg = gryffindor.HasCorrectPasswordFormat("en hårig älg"); //true
             successg = gryffindor.HasCorrectPasswordFormat("boken av häxkonst"); //false
 
             gryffindor.SetPassword("en gullig gris", "en rolig räv"); //den byter lösenord
 
 
 
-            Ravenclaw ravenclaw = new Ravenclaw();
+            House ravenclaw = new Ravenclaw();
 
             ravenclaw.HasCorrectPasswordFormat("en snäll kanin");  //true
             ravenclaw.HasCorrectPasswordFormat("en taskig pojke"); //false
@@ -59,13 +59,13 @@ namespace HarryPotter
 
             
             
-            Slytherin slytherin = new Slytherin();
+            House slytherin = new Slytherin();
 
-           bool success = slytherin.HasCorrectPasswordFormat("baaaaaaab"); // true
+            bool success = slytherin.HasCorrectPasswordFormat("baaaaaaab"); // true
             success = slytherin.HasCorrectPasswordFormat("eaaaaaae");  //false
 
-           bool ksuccess = slytherin.SetPassword("cenblodig", "caaaaaac"); //true
-           ksuccess = slytherin.SetPassword("cenblodiiiig", "cbbbbbbbc");  //false
+            bool ksuccess = slytherin.SetPassword("cenblodig", "caaaaaac"); //true
+            ksuccess = slytherin.SetPassword("cenblodiiiig", "cbbbbbbbc");  //false
 
 
         }
