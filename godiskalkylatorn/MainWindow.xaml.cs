@@ -25,7 +25,7 @@ namespace godiskalkylatorn
             InitializeComponent();
         }
         //1. skapar lista,av datatypen person som kan innehålla personobjekt
-        List<Person> Persons = new List<Person>();
+        //List<Person> Persons = new List<Person>();
 
         private void btnadd_Click(object sender, RoutedEventArgs e)
         {
@@ -42,18 +42,18 @@ namespace godiskalkylatorn
 
             //4 nästa steg är att lägga till personen(objeketet) i vår lista , skriv namnet på listan +add();
 
-            Persons.Add(person);
+            person.Persons.Add(person);
 
 
             //5 för att visa personen på listan och knyta den till en data källa gör vi såhär
             listbox1.ItemsSource = null;
-            listbox1.ItemsSource = Persons;
+            listbox1.ItemsSource = person.Persons;
 
             //6 clear text rutorna
 
-            //txtFirstname.Clear();
-            //txtLastname.Clear();
-            //txtAge.Clear();
+            txtFirstname.Clear();
+            txtLastname.Clear();
+            txtAge.Clear();
         }
     }
 }

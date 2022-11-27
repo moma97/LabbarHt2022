@@ -8,9 +8,11 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TextBox x:Name="txtboxinput" HorizontalAlignment="Left" Margin="128,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Height="152"/>
-        <Button x:Name="btnconvert" Content="Button" HorizontalAlignment="Left" Margin="329,112,0,0" VerticalAlignment="Top" Height="130" Width="95" Click="btnconvert_Click"/>
+        <Button x:Name="btnconvert" Content="Konvertera &#xD;&#xA;&#xD;&#xA;till rotvälska" HorizontalAlignment="Left" Margin="329,112,0,0" VerticalAlignment="Top" Height="130" Width="95" Click="btnconvert_Click"/>
         <TextBlock x:Name="txtblockjibberish" HorizontalAlignment="Left" Margin="505,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="98" Width="174"/>
-        <Label x:Name="lblvowels" Content="" HorizontalAlignment="Left" Margin="128,325,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblvowels" Content="Antal vokaler:" HorizontalAlignment="Left" Margin="128,325,0,0" VerticalAlignment="Top"/>
+        <Label Content="Grundtext" HorizontalAlignment="Left" Margin="133,70,0,0" VerticalAlignment="Top"/>
+        <Label Content="Rotvälska" HorizontalAlignment="Left" Margin="505,112,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

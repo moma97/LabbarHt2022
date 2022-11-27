@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uppgift2", "Uppgift2\Uppgif
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uppgift3", "Uppgift3\Uppgift3.csproj", "{279F7C47-4049-4CCC-8644-CA5E340F89D1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uppgift4", "Uppgift4\Uppgift4.csproj", "{39C1610C-0D75-40F5-8672-498C47F42F09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uppgift4ochuppgift7", "Uppgift4\Uppgift4ochuppgift7.csproj", "{39C1610C-0D75-40F5-8672-498C47F42F09}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uppgift5", "Uppgift5\Uppgift5.csproj", "{BA9222AB-8F0E-46F5-806E-C6A8D38F6C96}"
 EndProject
@@ -37,7 +37,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uppgift17", "Uppgift17\Uppg
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HarryPotter", "HarryPotter\HarryPotter.csproj", "{239B407F-E683-4F29-B409-5E85AFBC1ED9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "godiskalkylatorn", "godiskalkylatorn\godiskalkylatorn.csproj", "{4B024857-712B-41E4-A6FB-E2571944B951}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "godiskalkylatorn", "godiskalkylatorn\godiskalkylatorn.csproj", "{4B024857-712B-41E4-A6FB-E2571944B951}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

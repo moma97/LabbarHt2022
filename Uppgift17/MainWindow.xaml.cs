@@ -34,12 +34,11 @@ namespace Uppgift17
         /// <returns></returns>
         private int NumberOfVowels(string text)
         {
-            char[] bigVowels = new char[] { 'A', 'O', 'U', 'Å', 'E', 'I', 'Y', 'Ä', 'Ö' };
-
+         
             int count = 0;
             foreach (char c in text) 
             {
-                if (IsVowels(c) || bigVowels.Contains(c))
+                if (IsVowels(c) || (IsBigVowel(c))) 
 
                     count++;
             }
@@ -53,8 +52,7 @@ namespace Uppgift17
         /// <returns></returns>
         private string Jibberish(string text)
         {
-            char[] bigVowels = new char[] {'A', 'O', 'U', 'Å', 'E', 'I', 'Y', 'Ä', 'Ö'};
-
+            
             string a = "";
 
             foreach (char c in text)
@@ -67,7 +65,7 @@ namespace Uppgift17
 
 
                 }
-                else if (bigVowels.Contains(c))
+                else if (IsBigVowel(c))
                 {
                     a += 'Ö';
                 }
@@ -86,17 +84,33 @@ namespace Uppgift17
         /// </summary>
         /// <param name="asdText"></param>
         /// <returns></returns>
-        private bool IsVowels(char asdText)
+        private bool IsVowels(char vowel)
         {
             for (int i = 0; i < vowels.Length; i++)
             {
-                if (asdText == vowels[i])
+                if (vowel == vowels[i])
                 {
                     return true;
                 }
             }
 
            return false;
+
+        }
+
+        private bool IsBigVowel(char bigovwel)
+        {
+            char[] bigVowels = new char[] { 'A', 'O', 'U', 'Å', 'E', 'I', 'Y', 'Ä', 'Ö' };
+            
+            for (int i = 0; i < vowels.Length; i++)
+            {
+                if (bigovwel == bigVowels[i])
+                {
+                    return true;
+                }
+            }
+
+            return false;
 
         }
 
@@ -109,7 +123,7 @@ namespace Uppgift17
         {
             string myText = txtboxinput.Text;
 
-            lblvowels.Content = ($"Antal vokaler {NumberOfVowels(myText)}");
+            lblvowels.Content = ($"Antal vokaler: {NumberOfVowels(myText)}");
 
             txtblockjibberish.Text = Jibberish(myText);
         }
