@@ -102,7 +102,7 @@ namespace Uppgift17
         {
             char[] bigVowels = new char[] { 'A', 'O', 'U', 'Å', 'E', 'I', 'Y', 'Ä', 'Ö' };
             
-            for (int i = 0; i < vowels.Length; i++)
+            for (int i = 0; i < bigVowels.Length; i++)
             {
                 if (bigovwel == bigVowels[i])
                 {

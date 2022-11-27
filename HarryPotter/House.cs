@@ -11,6 +11,8 @@ namespace HarryPotter
 {
     internal abstract class House
     {
+       
+
         public string HouseGhost { get; set; }
 
         public string Mascot { get; set; }
@@ -27,31 +29,14 @@ namespace HarryPotter
        /// <returns></returns>
         public virtual bool SetPassword(string currentPassword, string newPassword)
         {
-
-            if (newPassword.Length >= 5)
-            {
-                
-
-
-                if (FirstLetterVowel(newPassword) == true)
+            
+                if (CurrentPassword(currentPassword) == true && HasCorrectPasswordFormat(newPassword))
                 {
-                   
+                    Password = newPassword;
+                    return true;
 
-
-                    if (LastLetterEndWithK(newPassword) == true)
-                    {
-                        
-
-
-                        if (CurrentPassword(currentPassword) == true)
-                        {
-                            Password = newPassword;
-                            return true;
-                           
-                        }
-                    }
                 }
-            }
+                
             return false;
         }
 
@@ -68,11 +53,11 @@ namespace HarryPotter
                 if (FirstLetterVowel(passwordatm) == true)
                 {
 
-                    if (LastLetterEndWithK(passwordatm) == true)
+                    if (IsConsonant(passwordatm) == true)
                     {
 
 
-                        //if (CurrentPassword(passwordatm) == true)
+                        
                         
                             return true;
                         
@@ -111,7 +96,7 @@ namespace HarryPotter
         /// </summary>
         /// <param name="newpassword"></param>
         /// <returns></returns>
-        public bool LastLetterEndWithK(string newpassword)
+        public bool IsConsonant(string newpassword)
         {
             char[] consonant = new char[] { 'b', 'c', 'd', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'z', 'x' };
 

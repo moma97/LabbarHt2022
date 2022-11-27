@@ -17,29 +17,7 @@ namespace HarryPotter
             Password = "cenblodig";
         }
 
-        /// <summary>
-        /// kollar att lösenordet har rätt format
-        /// </summary>
-        /// <param name="newpassword"></param>
-        /// <returns></returns>
-        //public bool HasCorrectPasswordFormatSlyth(string newpassword)
-        //{
-           
-        //        if (newpassword.Length >= 8)
-        //        {
-        //            if (FirstAndLast(newpassword) == true)
-
-        //            {
-        //                return true;
-        //            }
-        //        }
-
-            
-
-        //    return false;
-            
-        //}
-
+      
         /// <summary>
         /// sätter nytt lösenord om man inmatat rätt nuvrande och fyller kriterierna för nya
         /// </summary>
@@ -64,7 +42,24 @@ namespace HarryPotter
             }
             return false;
         }
+        public override bool HasCorrectPasswordFormat(string lösen)
+        {
 
+
+            if (lösen.Length >= 8)
+            {
+                if (FirstAndLast(lösen) == true)
+
+                {
+                    return true;
+                }
+            }
+
+
+
+            return false;
+
+        }
 
         /// <summary>
         /// kollar att första och sista bokstaven är konsonant
@@ -89,7 +84,19 @@ namespace HarryPotter
 
         }
 
+        public bool FirstLetter(string manuellt)
+        {
+            char[] consonant = new char[] { 'b', 'c', 'd', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'z', 'x' };
+            foreach (char c in consonant)
+            {
+                if (manuellt[0] == consonant)
+                    return true;
 
+                continue;
+
+            }
+            return false;
+        }
 
 
         /// <summary>
@@ -111,24 +118,7 @@ namespace HarryPotter
         //gjort fel, gör om enligt fl
 
 
-        public override bool HasCorrectPasswordFormat(string lösen)
-        {
-
-
-            if (lösen.Length >= 8)
-            {
-                if (FirstAndLast(lösen) == true)
-
-                {
-                    return true;
-                }
-            }
-
-
-
-            return false;
-
-        }
+       
 
 
 
