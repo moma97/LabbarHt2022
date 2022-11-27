@@ -65,7 +65,7 @@ namespace HarryPotter
             success = slytherin.HasCorrectPasswordFormat("eaaaaaae");  //false
 
             bool ksuccess = slytherin.SetPassword("cenblodig", "caaaaaac"); //true
-            ksuccess = slytherin.SetPassword("cenblodiiiig", "cbbbbbbbc");  //false
+            //ksuccess = slytherin.SetPassword("cenblodiiiig", "cbbbbbbbc");  //false
 
 
         }

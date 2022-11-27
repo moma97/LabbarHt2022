@@ -26,20 +26,14 @@ namespace HarryPotter
         /// <returns></returns>
         public override bool SetPassword(string currentPswds, string newPswds)
         {
-            if (newPswds.Length >= 8)
+            if (HasCorrectPasswordFormat(newPswds) == true && CurrentPassword(currentPswds) == true)
             {
-
-                if (FirstAndLast(newPswds) == true)
-                {
-                        if (CurrentPasswords(currentPswds) == true)
-                        {
-                            Password = newPswds;
-                            return true;
-
-                        }
-                    
-                }
+                Password = newPswds;
+                return true;
+                
             }
+
+            
             return false;
         }
         public override bool HasCorrectPasswordFormat(string lösen)
@@ -48,8 +42,7 @@ namespace HarryPotter
 
             if (lösen.Length >= 8)
             {
-                if (FirstAndLast(lösen) == true)
-
+                if (IsConsonant(lösen[0]) == true && IsConsonant(lösen[lösen.Length-1]) == true) 
                 {
                     return true;
                 }
@@ -61,64 +54,7 @@ namespace HarryPotter
 
         }
 
-        /// <summary>
-        /// kollar att första och sista bokstaven är konsonant
-        /// </summary>
-        /// <param name="pswdSlyth"></param>
-        /// <returns></returns>
-        public bool FirstAndLast(string pswdSlyth)
-        {
-            char[] consonant = new char[] { 'b', 'c', 'd', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'z', 'x' };
 
-            foreach (char c in consonant)
-            {
-                if (pswdSlyth.StartsWith(c) && pswdSlyth.EndsWith(c))
-                {
-                     return true;
-                }
-
-            }
-
-            return false;
-
-
-        }
-
-        public bool FirstLetter(string manuellt)
-        {
-            char[] consonant = new char[] { 'b', 'c', 'd', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'z', 'x' };
-            foreach (char c in consonant)
-            {
-                if (manuellt[0] == consonant)
-                    return true;
-
-                continue;
-
-            }
-            return false;
-        }
-
-
-        /// <summary>
-        /// kollar att lösenord är samma som det förbestämda
-        /// </summary>
-        /// <param name="currentPasswords"></param>
-        /// <returns></returns>
-        public bool CurrentPasswords(string currentPasswords)
-        {
-
-            if (currentPasswords == Password)
-            {
-                return true;
-            }
-
-            return false;
-        }
-
-        //gjort fel, gör om enligt fl
-
-
-       
 
 
 
@@ -126,7 +62,7 @@ namespace HarryPotter
 
 
     }
-      
+
 
 
 }

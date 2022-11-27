@@ -17,7 +17,7 @@ namespace HarryPotter
 
         public string Mascot { get; set; }
 
-        public string Members { get; set; }
+        public List<Wizard> Members { get; set; } = new List<Wizard>();
 
         public string Password { get; protected set; }
 
@@ -30,7 +30,7 @@ namespace HarryPotter
         public virtual bool SetPassword(string currentPassword, string newPassword)
         {
             
-                if (CurrentPassword(currentPassword) == true && HasCorrectPasswordFormat(newPassword))
+                if (CurrentPassword(currentPassword) == true && HasCorrectPasswordFormat(newPassword) == true)
                 {
                     Password = newPassword;
                     return true;
@@ -41,7 +41,7 @@ namespace HarryPotter
         }
 
         /// <summary>
-        /// kontrollerar att lösenordet har rätt format, //lade till virtual efter inlämning
+        /// kontrollerar att lösenordet har rätt format, //lade till virtual efter inlämning//här kollar vi om plats 1 och sista är vokal/consonant
         /// </summary>
         /// <param name="passwordatm"></param>
         /// <returns></returns>
@@ -50,10 +50,10 @@ namespace HarryPotter
             if (passwordatm.Length >= 5)
             {
 
-                if (FirstLetterVowel(passwordatm) == true)
+                if (FirstLetterVowel(passwordatm[0]) == true)
                 {
 
-                    if (IsConsonant(passwordatm) == true)
+                    if (IsConsonant(passwordatm[passwordatm.Length -1]) == true)
                     {
 
 
@@ -69,18 +69,18 @@ namespace HarryPotter
 
 
         /// <summary>
-        /// Kollar om första bokstaven är en vokal
+        /// Kollar om första bokstaven är en vokal//loopar igenom 
         /// </summary>
         /// <param name="newPassword"></param>
         /// <returns></returns>
-        public bool FirstLetterVowel(string newPassword)
+        public bool FirstLetterVowel(char letter)
         {
             char[] vowels = new char[] { 'a', 'o', 'u', 'å', 'e', 'i', 'y', 'ä', 'ö' };
 
             foreach (char c in vowels)
             {
 
-                if (newPassword.StartsWith(c))
+                if (c == letter)
                 {
                     
                     return true;
@@ -96,13 +96,13 @@ namespace HarryPotter
         /// </summary>
         /// <param name="newpassword"></param>
         /// <returns></returns>
-        public bool IsConsonant(string newpassword)
+        public bool IsConsonant(char newpassword)
         {
             char[] consonant = new char[] { 'b', 'c', 'd', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'z', 'x' };
 
             foreach (char c in consonant)
             {
-                if (newpassword.EndsWith(c))
+                if (c == newpassword)
                 {
                     
                     return true;
