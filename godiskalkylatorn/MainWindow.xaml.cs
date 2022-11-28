@@ -25,9 +25,10 @@ namespace godiskalkylatorn
             InitializeComponent();
         }
           CandyCalculator candycalculator = new CandyCalculator();
+        
 
         private void btnadd_Click(object sender, RoutedEventArgs e)
-        {
+            {
             string firstName = txtFirstname.Text;
             string lastName = txtLastname.Text;
             int personAge = int.Parse(txtAge.Text);
@@ -38,17 +39,30 @@ namespace godiskalkylatorn
             listbox1.ItemsSource = null;
             listbox1.ItemsSource = candycalculator.personList;
 
+            Clear();
 
-            txtFirstname.Clear();
-            txtLastname.Clear();
-            txtAge.Clear();
         }
 
+        private void btnsplit_Click(object sender, RoutedEventArgs e)
+        {
+           
+            int amountCandies = int.Parse(txtCandies.Text);
+                   
+
+            candycalculator.DistributeCandy(amountCandies);
+
+            listbox1.ItemsSource = null;
+            listbox1.ItemsSource = candycalculator.personList;
+
+           
+
+
+        }
 
         public void AddPerson(string inputFirst, string inputLast, int inputAge)  // denna metod är bättre för det blir inkapsling, mindre kod i main
         {
-            Person person = new Person();
 
+            Person person = new Person();
             person.Firstname = inputFirst;
             person.Lastname = inputLast;
             person.Age = inputAge;
@@ -58,6 +72,15 @@ namespace godiskalkylatorn
 
         }
 
+        public void Clear()
+        {
 
+            txtFirstname.Clear();
+            txtLastname.Clear();
+            txtAge.Clear();
+
+        }
+
+       
     }
 }

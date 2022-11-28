@@ -16,8 +16,8 @@
         <TextBox x:Name="txtAge" HorizontalAlignment="Left" Margin="164,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <ListBox x:Name="listbox1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="106,275,446,100"/>
         <Label Content="Personer" HorizontalAlignment="Left" Margin="48,275,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,306,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnsplit" Content="Fördela" HorizontalAlignment="Left" Margin="337,396,0,0" VerticalAlignment="Top" Height="58" Width="94"/>
+        <TextBox x:Name="txtCandies" HorizontalAlignment="Center" Margin="0,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnsplit" Content="Fördela" HorizontalAlignment="Left" Margin="337,396,0,0" VerticalAlignment="Top" Height="58" Width="94" Click="btnsplit_Click"/>
         <Label Content="Godisar" HorizontalAlignment="Left" Margin="333,275,0,0" VerticalAlignment="Top"/>
 
     </Grid>
