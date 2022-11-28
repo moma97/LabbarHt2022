@@ -24,36 +24,31 @@ namespace godiskalkylatorn
         {
             InitializeComponent();
         }
-        //1. skapar lista,av datatypen person som kan innehålla personobjekt
-        //List<Person> Persons = new List<Person>();
+    
 
         private void btnadd_Click(object sender, RoutedEventArgs e)
         {
-            //2 när jag trycker på knappen vill vi skapa ett objekt av klassen person
-            //för att skapa ett obj för den klassen så måste man först ange namnet på klassen (Person)
-            // sen en objekt referens, kalla den vad som helst 
-            //via den kan jag komma åt alla klassmedlemmar, som ligger i klassen person,property, metod, variabler 
-            Person person = new Person();
+        
 
-            //3 det som matas in lagras till egenskapen, skriver på såsätt för att komma åt den  
-            person.Firstname = txtFirstname.Text;
-            person.Lastname = txtLastname.Text;
-            person.Age= txtAge.Text;
-
-            //4 nästa steg är att lägga till personen(objeketet) i vår lista , skriv namnet på listan +add();
-
-            person.Persons.Add(person);
+            
+            Person person1= new Person();
+            CandyCalculator person2= new CandyCalculator();
+            
+            int personAge = int.Parse(txtAge.Text);
 
 
-            //5 för att visa personen på listan och knyta den till en data källa gör vi såhär
+            person2.AddPerson(txtFirstname.Text, txtLastname.Text, personAge);
+
+
+          
             listbox1.ItemsSource = null;
-            listbox1.ItemsSource = person.Persons;
+            listbox1.ItemsSource = person2.personList;
 
-            //6 clear text rutorna
+            ////6 clear text rutorna
 
-            txtFirstname.Clear();
-            txtLastname.Clear();
-            txtAge.Clear();
+            //txtFirstname.Clear();
+            //txtLastname.Clear();
+            //txtAge.Clear();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace godiskalkylatorn
 {
     class Person
     {
-        public string Age { get; set; }
+        public int Age { get; set; }
 
         public int Candies { get; set; }
 
@@ -17,7 +17,7 @@ namespace godiskalkylatorn
 
         public string Lastname { get; set; }
 
-        public List<Person> Persons  { get;set; } = new List<Person>();
+       
 
       
 
