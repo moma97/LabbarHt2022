@@ -17,9 +17,9 @@ namespace godiskalkylatorn
 
         public string Lastname { get; set; }
 
-       
 
       
+
 
         public override string ToString()
         {

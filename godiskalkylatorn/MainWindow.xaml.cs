@@ -24,31 +24,40 @@ namespace godiskalkylatorn
         {
             InitializeComponent();
         }
-    
+          CandyCalculator candycalculator = new CandyCalculator();
 
         private void btnadd_Click(object sender, RoutedEventArgs e)
         {
-        
-
-            
-            Person person1= new Person();
-            CandyCalculator person2= new CandyCalculator();
-            
+            string firstName = txtFirstname.Text;
+            string lastName = txtLastname.Text;
             int personAge = int.Parse(txtAge.Text);
 
+            AddPerson(firstName, lastName,personAge);
 
-            person2.AddPerson(txtFirstname.Text, txtLastname.Text, personAge);
-
-
-          
+                      
             listbox1.ItemsSource = null;
-            listbox1.ItemsSource = person2.personList;
+            listbox1.ItemsSource = candycalculator.personList;
 
-            ////6 clear text rutorna
 
-            //txtFirstname.Clear();
-            //txtLastname.Clear();
-            //txtAge.Clear();
+            txtFirstname.Clear();
+            txtLastname.Clear();
+            txtAge.Clear();
         }
+
+
+        public void AddPerson(string inputFirst, string inputLast, int inputAge)  // denna metod är bättre för det blir inkapsling, mindre kod i main
+        {
+            Person person = new Person();
+
+            person.Firstname = inputFirst;
+            person.Lastname = inputLast;
+            person.Age = inputAge;
+
+            candycalculator.personList.Add(person);
+
+
+        }
+
+
     }
 }

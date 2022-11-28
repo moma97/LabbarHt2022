@@ -9,27 +9,12 @@ namespace godiskalkylatorn
 {
     class CandyCalculator
     {
-        public List<Person> personList { get; set; } 
+        public List<Person> personList { get; set; } = new List<Person>();
 
+    
 
-        public CandyCalculator()
-        {
-            personList= new List<Person>();
-        }
-
-        public void AddPerson(string inputFirst, string inputLast, int inputAge)
-        {
-            Person person = new Person();
-            {
-                person.Firstname = inputFirst;
-                person.Lastname = inputLast;
-                person.Age = inputAge;
-                person.Candies = 0;
-            };
-
-            personList.Add(person);                 
-
-        }
+        
+        
 
 
 
