@@ -28,7 +28,7 @@ namespace godiskalkylatorn
         
 
         private void btnadd_Click(object sender, RoutedEventArgs e)
-            {
+        {
             string firstName = txtFirstname.Text;
             string lastName = txtLastname.Text;
             int personAge = int.Parse(txtAge.Text);
@@ -41,6 +41,15 @@ namespace godiskalkylatorn
 
             Clear();
 
+
+            Person person = new Person();
+            string filename = "Person.json";
+            FileHandler.Save(person, filename);
+            List<Person>persons = FileHandler.Open<List<Person>> ("persons.json");
+
+
+
+             
         }
 
         private void btnsplit_Click(object sender, RoutedEventArgs e)
@@ -81,8 +90,8 @@ namespace godiskalkylatorn
         {
             candycalculator.DistributeCandyByAge();
 
-            //listbox1.ItemsSource = null;
-            //listbox1.ItemsSource = candycalculator.personList;
+            listbox1.ItemsSource = null;
+            listbox1.ItemsSource = candycalculator.personList;
 
         }
 
