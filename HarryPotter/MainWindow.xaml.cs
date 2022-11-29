@@ -78,6 +78,10 @@ namespace HarryPotter
 
         private void cboHouses_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            cboHouses.Items.Add(hogwarts.Gryffindor);
+            cboHouses.Items.Add(hogwarts.Hufflepuff);
+            cboHouses.Items.Add(hogwarts.Slytherin);
+            cboHouses.Items.Add(hogwarts.Ravenclaw);
 
         }
     }
