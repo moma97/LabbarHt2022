@@ -1,7 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Nodes;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace godiskalkylatorn
 {
@@ -23,10 +29,11 @@ namespace godiskalkylatorn
         public MainWindow()
         {
             InitializeComponent();
+            CheckJSON();
         }
           CandyCalculator candycalculator = new CandyCalculator();
-        
-
+       
+       
         private void btnadd_Click(object sender, RoutedEventArgs e)
         {
             string firstName = txtFirstname.Text;
@@ -40,16 +47,8 @@ namespace godiskalkylatorn
             listbox1.ItemsSource = candycalculator.personList;
 
             Clear();
+                               
 
-
-            Person person = new Person();
-            string filename = "Person.json";
-            FileHandler.Save(person, filename);
-            List<Person>persons = FileHandler.Open<List<Person>> ("persons.json");
-
-
-
-             
         }
 
         private void btnsplit_Click(object sender, RoutedEventArgs e)
@@ -61,7 +60,9 @@ namespace godiskalkylatorn
 
             listbox1.ItemsSource = null;
             listbox1.ItemsSource = candycalculator.personList;
-                     
+
+            SaveJson();
+            
         }
 
         public void AddPerson(string inputFirst, string inputLast, int inputAge)  // denna metod är bättre för det blir inkapsling, mindre kod i main
@@ -110,5 +111,36 @@ namespace godiskalkylatorn
             listbox1.ItemsSource = candycalculator.personList;
 
         }
+
+       
+
+        private void CheckJSON()
+        {
+            string fileName = "Candy.json";
+            if (File.Exists(fileName))
+            {
+                candycalculator = FileHandler.Open<CandyCalculator>(fileName);
+
+                listbox1.ItemsSource = null;
+                listbox1.ItemsSource = candycalculator.personList;
+            }
+            else
+            {
+                listbox1.ItemsSource = null;
+                listbox1.ItemsSource = candycalculator.personList;
+
+            }
+
+        }
+
+        private void SaveJson()
+        {
+
+            string filename = "Candy.json";
+            FileHandler.Save(candycalculator, filename);
+
+        }
+
+
     }
 }

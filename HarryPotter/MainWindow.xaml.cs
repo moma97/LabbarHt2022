@@ -68,6 +68,17 @@ namespace HarryPotter
             //ksuccess = slytherin.SetPassword("cenblodiiiig", "cbbbbbbbc");  //false
 
 
+
+        }
+
+        private void btnSortingHat_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cboHouses_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
