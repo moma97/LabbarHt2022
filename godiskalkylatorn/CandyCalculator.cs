@@ -14,7 +14,7 @@ namespace godiskalkylatorn
     {
         public List<Person> personList { get; set; } = new List<Person>();
 
-    
+
         public void DistributeCandy(int candies)
         {
 
@@ -24,7 +24,7 @@ namespace godiskalkylatorn
 
 
 
-            foreach (Person person in personList)  
+            foreach (Person person in personList)
             {
                 person.Candies = total;
 
@@ -37,12 +37,28 @@ namespace godiskalkylatorn
                     rest--;
                     person.Candies++;
 
-                }    
+                }
             }
 
         }
-        
-        
+
+        public void DistributeCandyByAge()
+        {
+            personList = personList.OrderBy(x => x.Age).ToList();
+
+        }
+
+        public void DistributeCandybyFirstName()
+        {
+            personList = personList.OrderBy(x => x.Firstname).ToList();
+
+        }
+
+        public void DistributeCandyByLastName()
+        {
+            personList = personList.OrderBy(x => x.Lastname).ToList();
+
+        }
 
 
 

@@ -19,6 +19,9 @@
         <TextBox x:Name="txtCandies" HorizontalAlignment="Center" Margin="0,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnsplit" Content="Fördela" HorizontalAlignment="Left" Margin="337,396,0,0" VerticalAlignment="Top" Height="58" Width="94" Click="btnsplit_Click"/>
         <Label Content="Godisar" HorizontalAlignment="Left" Margin="333,275,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rdbtnAge" Content="Age" HorizontalAlignment="Left" Margin="493,396,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked" IsChecked="False"/>
+        <RadioButton x:Name="rdbtnfirstname" Content="Förnamn" HorizontalAlignment="Left" Margin="493,425,0,0" VerticalAlignment="Top" Checked="rdbtnfirstname_Checked"/>
+        <RadioButton x:Name="rdbtnlastname" Content="Efternamn" HorizontalAlignment="Left" Margin="493,454,0,0" VerticalAlignment="Top" Checked="rdbtnlastname_Checked"/>
 
     </Grid>
 </Window>

@@ -48,15 +48,11 @@ namespace godiskalkylatorn
            
             int amountCandies = int.Parse(txtCandies.Text);
                    
-
             candycalculator.DistributeCandy(amountCandies);
 
             listbox1.ItemsSource = null;
             listbox1.ItemsSource = candycalculator.personList;
-
-           
-
-
+                     
         }
 
         public void AddPerson(string inputFirst, string inputLast, int inputAge)  // denna metod är bättre för det blir inkapsling, mindre kod i main
@@ -81,6 +77,29 @@ namespace godiskalkylatorn
 
         }
 
-       
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            candycalculator.DistributeCandyByAge();
+
+            //listbox1.ItemsSource = null;
+            //listbox1.ItemsSource = candycalculator.personList;
+
+        }
+
+        private void rdbtnfirstname_Checked(object sender, RoutedEventArgs e)
+        {
+            candycalculator.DistributeCandybyFirstName();
+            listbox1.ItemsSource = null;
+            listbox1.ItemsSource = candycalculator.personList;
+
+        }
+
+        private void rdbtnlastname_Checked(object sender, RoutedEventArgs e)
+        {
+            candycalculator.DistributeCandyByLastName();
+            listbox1.ItemsSource = null;
+            listbox1.ItemsSource = candycalculator.personList;
+
+        }
     }
 }
