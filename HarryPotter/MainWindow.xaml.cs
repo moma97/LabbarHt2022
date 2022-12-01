@@ -49,7 +49,7 @@ namespace HarryPotter
             House house = hogwarts.SortingHat(wizard); //vad gjorde vi här
            
 
-            txtName.Text = wizard.Name;
+            //txtName.Text = wizard.Name;
 
 
             if (wizard.DeathEater)
@@ -255,6 +255,42 @@ namespace HarryPotter
             lblSlytherinMascot.Content = hogwarts.Slytherin.Mascot;
 
 
+        }
+
+        private void lstHufflepuff_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+                Wizard wizard = (Wizard)lstHufflepuff.SelectedItem;
+            chkDeatheater.IsChecked = wizard.DeathEater;
+            chkArmy.IsChecked = wizard.DumbledoorsArmy;
+            txtName.Text = wizard.Name;
+            txtNewWizardName.Clear();
+        }
+
+        private void lstRavenclaw_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Wizard wizard = (Wizard)lstRavenclaw.SelectedItem;
+            chkDeatheater.IsChecked = wizard.DeathEater;
+            chkArmy.IsChecked = wizard.DumbledoorsArmy;
+            txtName.Text = wizard.Name;
+            txtNewWizardName.Clear();
+        }
+
+        private void lstGryffindor_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Wizard wizard = (Wizard)lstGryffindor.SelectedItem;
+            chkDeatheater.IsChecked = wizard.DeathEater;
+            chkArmy.IsChecked = wizard.DumbledoorsArmy;
+            txtName.Text = wizard.Name;
+            txtNewWizardName.Clear();
+        }
+
+        private void lstSlytherin_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Wizard wizard = (Wizard)lstSlytherin.SelectedItem;
+            chkDeatheater.IsChecked = wizard.DeathEater;
+            chkArmy.IsChecked = wizard.DumbledoorsArmy;
+            txtName.Text = wizard.Name;
+            txtNewWizardName.Clear();
         }
     }
 }
