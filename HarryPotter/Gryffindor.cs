@@ -14,7 +14,6 @@ namespace HarryPotter
         {
             HouseGhost = "Nästan Huvudlöse Nick";
             Mascot = "Lejon";
-            Members = null;
             Password = "en gullig gris";
 
 
@@ -22,15 +21,9 @@ namespace HarryPotter
           
         }
 
-        public void DisplayList() 
-        {
-         
-            
-        
-        
-        }
-           
-        
+      
+
+
 
     }
 }

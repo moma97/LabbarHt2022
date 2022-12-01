@@ -13,11 +13,11 @@ namespace HarryPotter
         {
             HouseGhost = "Den Blodiga Baronen";
             Mascot = "Ormen";
-            Members = null;
+            
             Password = "cenblodig";
         }
+     
 
-      
         /// <summary>
         /// sätter nytt lösenord om man inmatat rätt nuvrande och fyller kriterierna för nya
         /// </summary>

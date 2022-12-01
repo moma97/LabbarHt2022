@@ -19,8 +19,8 @@ namespace HarryPotter
 
         public Slytherin Slytherin { get; set; }
 
-        //Wizard wizard = new Wizard();
         
+
         int count = 0;
 
 
@@ -36,10 +36,9 @@ namespace HarryPotter
         }
 
 
-        public House SortingHat(Wizard wizard)  //Indata är alltså en trollkarl och utdatat blir vilket elevhem som man hamnar i.
+        public House SortingHat(Wizard wizard)  //Indata är alltså en trollkarl och utdatat blir vilket elevhem som man hamnar i. "House" "Wizard"
         {
                    
-
             if (count == 0)
             {
                 Hufflepuff.Members.Add(wizard);
@@ -66,14 +65,17 @@ namespace HarryPotter
                 Slytherin.Members.Add(wizard);
                 return Slytherin;
             }
-           
-            
+
+
+          
+
+
+
+
 
         }
 
-
-
-
+       
     }
 }                        
     

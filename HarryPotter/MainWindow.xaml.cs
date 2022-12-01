@@ -21,14 +21,15 @@ namespace HarryPotter
     public partial class MainWindow : Window
     {
         Hogwarts hogwarts = new Hogwarts();
+        //Wizard wizard = new Wizard();
+        //House house = new House();
 
 
-        //House house= new House(); ///tog bort abstract ,vet ej om det blir kaos då? 
 
-        House hufflepuff = new Hufflepuff();
-        House gryffindor = new Gryffindor();
-        House ravenclaw = new Ravenclaw();
-        House slytherin = new Slytherin();
+        //House hufflepuff = new Hufflepuff();
+        //House gryffindor = new Gryffindor();
+        //House ravenclaw = new Ravenclaw();
+        //House slytherin = new Slytherin();
         int count = 0;
 
         public MainWindow()
@@ -36,25 +37,56 @@ namespace HarryPotter
 
             InitializeComponent();
             CmbBoxDisplay();
+            MascotLabels();
         }
 
 
 
         private void btnSortingHat_Click(object sender, RoutedEventArgs e)
         {
-            Wizard wizard= new Wizard();
-            hogwarts.SortingHat(wizard);
+           
+            Wizard wizard = new Wizard(txtNewWizardName.Text);
+            House house = hogwarts.SortingHat(wizard); //vad gjorde vi här
+           
 
-            House house = hogwarts.SortingHat(wizard);
+            txtName.Text = wizard.Name;
 
+
+            if (wizard.DeathEater)
+            {
+                chkDeatheater.IsChecked = true;
+
+            }
+
+            if (wizard.DumbledoorsArmy)
+            {
+
+                chkArmy.IsChecked = true;
+            }
+            if (wizard.DeathEater == false)
+            {
+                
+                chkDeatheater.IsChecked = false;
+            }
+            if (wizard.DumbledoorsArmy== false) 
+            {
+                chkArmy.IsChecked = false;
+            }
+
+
+
+            DisplayListgryff();
+            DisplayListHuffle();
+            DisplayListRaven();
+            DisplayListSlyth();
+
+                                    
+
+            MessageBox.Show($"{wizard} är numera medlem nr {house.Members.Count} i {house}. {house.HouseGhost} kommer ta väl hand om dig.");
 
         }
 
-        private void cboHouses_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-
-        }
 
 
 
@@ -63,32 +95,15 @@ namespace HarryPotter
             string currentPassword = txtOldPassword.Text;
             string newPassword = txtNewPassword.Text;
 
-          
+
 
             Object selectedItem = cboHouses.SelectedItem;
-            if (selectedItem == hogwarts.Gryffindor) 
-            
+            if (selectedItem == hogwarts.Gryffindor)
+
             {
-                if (gryffindor.SetPassword(currentPassword, newPassword) && gryffindor.HasCorrectPasswordFormat(newPassword))
+                if (hogwarts.Gryffindor.SetPassword(currentPassword, newPassword) && hogwarts.Gryffindor.HasCorrectPasswordFormat(newPassword))
                 {
-                   
-                   MessageBox.Show("Ditt lösenord har nu ändrats!");
-                }
-                else
-                {
-                  MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
-                }
 
-
-            }
-
-            if (selectedItem == hogwarts.Hufflepuff)
-            
-            {
-
-                if (hufflepuff.SetPassword(currentPassword, newPassword) && hufflepuff.HasCorrectPasswordFormat(newPassword))
-                {
-                    
                     MessageBox.Show("Ditt lösenord har nu ändrats!");
                 }
                 else
@@ -99,37 +114,54 @@ namespace HarryPotter
 
             }
 
-            if (selectedItem == hogwarts.Ravenclaw)
+        //    if (selectedItem == hogwarts.Hufflepuff)
 
-            {
-                if (ravenclaw.SetPassword(currentPassword, newPassword) && ravenclaw.HasCorrectPasswordFormat(newPassword))
-                {
-                   
-                    MessageBox.Show("Ditt lösenord har nu ändrats!");
-                }
-                else
-                {
-                    MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
-                }
+        //    {
 
+        //        if (hufflepuff.SetPassword(currentPassword, newPassword) && hufflepuff.HasCorrectPasswordFormat(newPassword))
+        //        {
 
-            }
-
-            if (selectedItem == hogwarts.Slytherin)
-
-            {
-                if (slytherin.SetPassword(currentPassword, newPassword) && slytherin.HasCorrectPasswordFormat(newPassword))
-                {
-                   
-                    MessageBox.Show("Ditt lösenord har nu ändrats!");
-                }
-                else
-                {
-                    MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
-                }
+        //            MessageBox.Show("Ditt lösenord har nu ändrats!");
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
+        //        }
 
 
-            }
+        //    }
+
+        //    if (selectedItem == hogwarts.Ravenclaw)
+
+        //    {
+        //        if (ravenclaw.SetPassword(currentPassword, newPassword) && ravenclaw.HasCorrectPasswordFormat(newPassword))
+        //        {
+
+        //            MessageBox.Show("Ditt lösenord har nu ändrats!");
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
+        //        }
+
+
+        //    }
+
+        //    if (selectedItem == hogwarts.Slytherin)
+
+        //    {
+        //        if (slytherin.SetPassword(currentPassword, newPassword) && slytherin.HasCorrectPasswordFormat(newPassword))
+        //        {
+
+        //            MessageBox.Show("Ditt lösenord har nu ändrats!");
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
+        //        }
+
+
+        //    }
 
 
 
@@ -137,66 +169,6 @@ namespace HarryPotter
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    House hufflepuff = new Hufflepuff();
-
-        //    bool successh =hufflepuff.HasCorrectPasswordFormat("en ensam trollkarl"); //true
-
-        //    successh =hufflepuff.HasCorrectPasswordFormat("en ensam trollkvinna");  //false
-
-        //    //SetPassword(string currentPassword, string newPassword)
-        //    bool successf = hufflepuff.SetPassword("en ensam trollkarl", "alla får vara mea");   //false
-        //    successf = hufflepuff.SetPassword("en ensam trollkarl", "alla får vara med"); //true //den byter faktiskt lösenordet, men endast i knappklicket.
-
-
-
-
-
-        //    House gryffindor = new Gryffindor();
-
-        //    bool successg = gryffindor.HasCorrectPasswordFormat("en hårig älg"); //true
-        //    successg = gryffindor.HasCorrectPasswordFormat("boken av häxkonst"); //false
-
-        //    gryffindor.SetPassword("en gullig gris", "en rolig räv"); //den byter lösenord
-
-
-
-        //    House ravenclaw = new Ravenclaw();
-
-        //    ravenclaw.HasCorrectPasswordFormat("en snäll kanin");  //true
-        //    ravenclaw.HasCorrectPasswordFormat("en taskig pojke"); //false
-
-        //    ravenclaw.SetPassword("öron vax", "en ful hörlur"); //byter lösen
-
-
-
-        //    House slytherin = new Slytherin();
-
-        //    bool success = slytherin.HasCorrectPasswordFormat("baaaaaaab"); // true
-        //    success = slytherin.HasCorrectPasswordFormat("eaaaaaae");  //false
-
-        //    bool ksuccess = slytherin.SetPassword("cenblodig", "caaaaaac"); //true
-        //    //ksuccess = slytherin.SetPassword("cenblodiiiig", "cbbbbbbbc");  //false
-
-
-
-        //}
 
 
         public void CmbBoxDisplay()
@@ -208,46 +180,81 @@ namespace HarryPotter
 
         }
 
-        private void btntesta_Click(object sender, RoutedEventArgs e)
+
+
+        //public void WizardValues()
+        //{
+
+        //    wizard.Name = txtNewWizardName.Text;
+
+        //    wizard.WizzyBloodStatus();
+        //    wizard.WizzyDeathEater();
+        //    wizard.DumbledoresArmy();
+
+        //    txtName.Text = wizard.Name;
+
+
+        //    if (wizard.DeathEater)
+        //    {
+        //        chkDeatheater.IsChecked = true;
+
+        //    }
+        //    if (wizard.DumbledoorsArmy)
+        //    {
+
+        //        chkArmy.IsChecked = true;
+        //    }
+
+
+
+        //}
+
+        public void DisplayListgryff()
         {
-            Wizard wizard = new Wizard();
+            lstGryffindor.ItemsSource = null;
+            lstGryffindor.ItemsSource = hogwarts.Gryffindor.Members;
+
+        }
+
+        public void DisplayListHuffle()
+        {
+
+            lstHufflepuff.ItemsSource = null;
+            lstHufflepuff.ItemsSource = hogwarts.Hufflepuff.Members;
+        }
+
+        public void DisplayListRaven()
+        {
+
+            lstRavenclaw.ItemsSource = null;
+            lstRavenclaw.ItemsSource = hogwarts.Ravenclaw.Members;
+
+        }
+
+        public void DisplayListSlyth()
+        {
+            lstSlytherin.ItemsSource = null;
+            lstSlytherin.ItemsSource = hogwarts.Slytherin.Members;
+
+        }
 
 
-            wizard.Name = txtNewWizardName.Text;
 
-            wizard.WizzyBloodStatus();
-            wizard.WizzyDeathEater();
-            wizard.DumbledoresArmy();
+        private void cboHouses_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
-            txtName.Text = wizard.Name;
+        }
 
-          
-            if (wizard.DeathEater)
-            {
-                chkDeatheater.IsChecked = true;
+        private void MascotLabels()
+        {
 
-            }
-            if (wizard.DumbledoorsArmy)
-            {
+            lblGryffindorMascot.Content = hogwarts.Gryffindor.Mascot;
 
-                chkArmy.IsChecked = true;
-            }
+            lblHufflepuffMascot.Content = hogwarts.Hufflepuff.Mascot;
+            lblRavenclawMascot.Content = hogwarts.Ravenclaw.Mascot;
+            lblSlytherinMascot.Content = hogwarts.Slytherin.Mascot;
 
 
-            
-          
-
-
-
-                            txtName.Clear();
-            chkArmy.IsChecked = false;
-            chkDeatheater.IsChecked = false;
-
-        } 
-
-      
-        
-
-
+        }
     }
 }

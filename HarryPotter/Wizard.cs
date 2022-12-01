@@ -17,44 +17,56 @@ namespace HarryPotter
 
         public string Name { get; set; } //trollkarens namn
 
-        
+        public Wizard(string name) //Varför deklarera i konstruktor??
+        {
+
+
+            Name = name;
+            WizzyBloodStatus();
+            WizzyDeathEater();
+            DumbledoresArmy();
+                
+
+
+        }
+
+        public override string ToString()
+        {
+            return Name;
+        }
 
         public void WizzyBloodStatus()
         {
             Random bloodStatus = new Random();
-            string halvBlod;
-            string mugglarfödd;
-            string fullblod;
-            string okänt;
+         
 
             int whatBlood = bloodStatus.Next(1, 101);
 
             if (whatBlood >= 40 && whatBlood <= 100)
             {
                 BloodStatus = "Halvblod";
-                MessageBox.Show(BloodStatus);
+                
             }
 
             if (whatBlood >= 15 && whatBlood <= 40)
             {
 
                 BloodStatus = "Mugglarfödd";
-                MessageBox.Show(BloodStatus);
+                
             }
             if (whatBlood >= 5 && whatBlood <= 15)
             {
 
                 BloodStatus = "Fullblod";
-                MessageBox.Show(BloodStatus);
+                
 
             }
-
 
             if (whatBlood > 0 && whatBlood <= 5)
             {
 
                 BloodStatus = "Okänt";
-                MessageBox.Show(BloodStatus);
+                
             }
 
 
