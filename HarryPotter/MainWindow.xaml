@@ -5,10 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HarryPotter"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Viewbox HorizontalAlignment="Left" Stretch="Uniform">
-            <Grid Background="White" Margin="35" Width="850">
+        Title="MainWindow" Height="644" Width="750">
+    <Grid Margin="0,0,0,-6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="630*"/>
+            <ColumnDefinition Width="63*"/>
+            <ColumnDefinition Width="131*"/>
+        </Grid.ColumnDefinitions>
+        <Viewbox HorizontalAlignment="Left" Stretch="Uniform" Grid.ColumnSpan="3">
+            <Grid Background="White" Width="773" Height="733">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="25" />
                     <RowDefinition Height="Auto" />
@@ -89,7 +94,7 @@
                         <TextBox x:Name="txtOldPassword" />
                         <Label Content="Nytt lösenord"/>
                         <TextBox x:Name="txtNewPassword" />
-                        <Button Margin="10,5,10,0" x:Name="btnChangePassword" Content="Byt lösenord" />
+                        <Button Margin="10,5,10,0" x:Name="btnChangePassword" Content="Byt lösenord" Click="btnChangePassword_Click" />
                     </StackPanel>
                 </GroupBox>
             </Grid>

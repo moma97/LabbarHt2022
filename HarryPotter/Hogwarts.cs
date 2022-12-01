@@ -8,15 +8,29 @@ using System.Threading.Tasks;
 
 namespace HarryPotter
 {
-    public class Hogwarts
+    internal class Hogwarts
     {
-        public House Gryffindor { get; set; }
+        public Gryffindor Gryffindor { get; set; }
         
-        public House Hufflepuff { get; set; }
+        public Hufflepuff Hufflepuff { get; set; }
 
-        public House Ravenclaw { get; set; }
+        public Ravenclaw Ravenclaw { get; set; }
 
-        public House Slytherin { get; set; }
+        public Slytherin Slytherin { get; set; }
+
+
+        public Hogwarts() //nyar upp egenskaperna //fråga till imorgon varför man måste göra såhär // 
+        {
+            Gryffindor= new Gryffindor();
+            Hufflepuff= new Hufflepuff();
+            Ravenclaw= new Ravenclaw();
+            Slytherin= new Slytherin();
+
+        }
+
+    
+
+
 
 
     }

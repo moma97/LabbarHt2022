@@ -20,56 +20,24 @@ namespace HarryPotter
     /// </summary>
     public partial class MainWindow : Window
     {
+        Hogwarts hogwarts = new Hogwarts();
+        
+        /*House house= new House(); *///tog bort abstract ,vet ej om det blir kaos då? 
+
+        House hufflepuff = new Hufflepuff();
+        House gryffindor = new Gryffindor();
+        House ravenclaw = new Ravenclaw();
+        House slytherin = new Slytherin();
+
+
         public MainWindow()
         {
+
             InitializeComponent();
+            CmbBoxDisplay();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            House hufflepuff = new Hufflepuff();
 
-            bool successh =hufflepuff.HasCorrectPasswordFormat("en ensam trollkarl"); //true
-                
-            successh =hufflepuff.HasCorrectPasswordFormat("en ensam trollkvinna");  //false
-
-            //SetPassword(string currentPassword, string newPassword)
-            bool successf = hufflepuff.SetPassword("en ensam trollkarl", "alla får vara mea");   //false
-            successf = hufflepuff.SetPassword("en ensam trollkarl", "alla får vara med"); //true //den byter faktiskt lösenordet, men endast i knappklicket.
-            
-
-
-
-
-            House gryffindor = new Gryffindor();
-
-            bool successg = gryffindor.HasCorrectPasswordFormat("en hårig älg"); //true
-            successg = gryffindor.HasCorrectPasswordFormat("boken av häxkonst"); //false
-
-            gryffindor.SetPassword("en gullig gris", "en rolig räv"); //den byter lösenord
-
-
-
-            House ravenclaw = new Ravenclaw();
-
-            ravenclaw.HasCorrectPasswordFormat("en snäll kanin");  //true
-            ravenclaw.HasCorrectPasswordFormat("en taskig pojke"); //false
-
-            ravenclaw.SetPassword("öron vax", "en ful hörlur"); //byter lösen
-
-            
-            
-            House slytherin = new Slytherin();
-
-            bool success = slytherin.HasCorrectPasswordFormat("baaaaaaab"); // true
-            success = slytherin.HasCorrectPasswordFormat("eaaaaaae");  //false
-
-            bool ksuccess = slytherin.SetPassword("cenblodig", "caaaaaac"); //true
-            //ksuccess = slytherin.SetPassword("cenblodiiiig", "cbbbbbbbc");  //false
-
-
-
-        }
 
         private void btnSortingHat_Click(object sender, RoutedEventArgs e)
         {
@@ -78,11 +46,147 @@ namespace HarryPotter
 
         private void cboHouses_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+
+        }
+
+        //private void ComboBoxItem_Selected(object sender, RoutedEventArgs e)
+        //{
+        //    string currentPassword = txtOldPassword.Text;
+        //        string newPassword = txtNewPassword.Text;
+
+
+        //    gryffindor.SetPassword(currentPassword, newPassword);
+        //    gryffindor.HasCorrectPasswordFormat(newPassword);
+
+
+        //}
+
+        private void btnChangePassword_Click(object sender, RoutedEventArgs e)
+        {
+            string currentPassword = txtOldPassword.Text;
+            string newPassword = txtNewPassword.Text;
+
+
+            //if ((this.cboHouses.SelectedItem = gryffindor))
+            //{
+            //    if (gryffindor.SetPassword(currentPassword, newPassword) && gryffindor.HasCorrectPasswordFormat(newPassword))
+            //    {
+            //        gryffindor.SetPassword(currentPassword, newPassword);
+            //        MessageBox.Show("Ditt lösenord har nu ändrats!");
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
+            //    }
+
+            //}
+           
+            //if ((bool)(cboHouses.SelectedItem = hufflepuff))
+            //{
+            //    if (hufflepuff.SetPassword(currentPassword, newPassword) && hufflepuff.HasCorrectPasswordFormat(newPassword))
+            //    {
+            //        hufflepuff.SetPassword(currentPassword, newPassword);
+            //        MessageBox.Show("Ditt lösenord har nu ändrats!");
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
+            //    }
+
+
+            //}
+
+          
+
+            Object selectedItem = cboHouses.SelectedItem;
+            if (selectedItem == gryffindor) 
+            
+            {
+                if (gryffindor.SetPassword(currentPassword, newPassword) && gryffindor.HasCorrectPasswordFormat(newPassword))
+                {
+                    gryffindor.SetPassword(currentPassword, newPassword);
+                   MessageBox.Show("Ditt lösenord har nu ändrats!");
+                }
+                else
+                {
+                  MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    House hufflepuff = new Hufflepuff();
+
+        //    bool successh =hufflepuff.HasCorrectPasswordFormat("en ensam trollkarl"); //true
+
+        //    successh =hufflepuff.HasCorrectPasswordFormat("en ensam trollkvinna");  //false
+
+        //    //SetPassword(string currentPassword, string newPassword)
+        //    bool successf = hufflepuff.SetPassword("en ensam trollkarl", "alla får vara mea");   //false
+        //    successf = hufflepuff.SetPassword("en ensam trollkarl", "alla får vara med"); //true //den byter faktiskt lösenordet, men endast i knappklicket.
+
+
+
+
+
+        //    House gryffindor = new Gryffindor();
+
+        //    bool successg = gryffindor.HasCorrectPasswordFormat("en hårig älg"); //true
+        //    successg = gryffindor.HasCorrectPasswordFormat("boken av häxkonst"); //false
+
+        //    gryffindor.SetPassword("en gullig gris", "en rolig räv"); //den byter lösenord
+
+
+
+        //    House ravenclaw = new Ravenclaw();
+
+        //    ravenclaw.HasCorrectPasswordFormat("en snäll kanin");  //true
+        //    ravenclaw.HasCorrectPasswordFormat("en taskig pojke"); //false
+
+        //    ravenclaw.SetPassword("öron vax", "en ful hörlur"); //byter lösen
+
+
+
+        //    House slytherin = new Slytherin();
+
+        //    bool success = slytherin.HasCorrectPasswordFormat("baaaaaaab"); // true
+        //    success = slytherin.HasCorrectPasswordFormat("eaaaaaae");  //false
+
+        //    bool ksuccess = slytherin.SetPassword("cenblodig", "caaaaaac"); //true
+        //    //ksuccess = slytherin.SetPassword("cenblodiiiig", "cbbbbbbbc");  //false
+
+
+
+        //}
+
+
+        public void CmbBoxDisplay()
+        {
             cboHouses.Items.Add(hogwarts.Gryffindor);
             cboHouses.Items.Add(hogwarts.Hufflepuff);
             cboHouses.Items.Add(hogwarts.Slytherin);
             cboHouses.Items.Add(hogwarts.Ravenclaw);
 
         }
+
+       
     }
 }

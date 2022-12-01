@@ -17,20 +17,28 @@ namespace HarryPotter
 
         public string Mascot { get; set; }
 
-        public List<Wizard> Members { get; set; } = new List<Wizard>();
+        public List<Wizard> Members { get; set; } //= new List<Wizard>();
 
-        public string Password { get; protected set; }
+        public string Password { get; protected set; } //vrf är den protected set?
 
-       /// <summary>
-       /// om nuvarande lösenord är samma och framtida lösnord fyller kritierier byt lösenord
-       /// </summary>
-       /// <param name="currentPassword"></param>
-       /// <param name="newPassword"></param>
-       /// <returns></returns>
+      
+
+
+        public override string ToString()
+        {
+            return this.GetType().Name;
+        }
+
+        /// <summary>
+        /// om nuvarande lösenord är samma och framtida lösnord fyller kritierier byt lösenord
+        /// </summary>
+        /// <param name="currentPassword"></param>
+        /// <param name="newPassword"></param>
+        /// <returns></returns>
         public virtual bool SetPassword(string currentPassword, string newPassword)
         {
             
-                if (CurrentPassword(currentPassword) == true && HasCorrectPasswordFormat(newPassword) == true)
+                if (CurrentPassword(currentPassword) && HasCorrectPasswordFormat(newPassword))
                 {
                     Password = newPassword;
                     return true;
@@ -50,15 +58,11 @@ namespace HarryPotter
             if (passwordatm.Length >= 5)
             {
 
-                if (FirstLetterVowel(passwordatm[0]) == true)
+                if (FirstLetterVowel(passwordatm[0]))
                 {
 
-                    if (IsConsonant(passwordatm[passwordatm.Length -1]) == true)
-                    {
-
-
-                        
-                        
+                    if (IsConsonant(passwordatm[passwordatm.Length -1]))
+                    {                                                                
                             return true;
                         
                     }

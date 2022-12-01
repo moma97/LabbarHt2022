@@ -24,7 +24,7 @@ namespace HarryPotter
         /// <param name="currentPswds"></param>
         /// <param name="newPswds"></param>
         /// <returns></returns>
-        public override bool SetPassword(string currentPswds, string newPswds)
+        public bool SetPassword(string currentPswds, string newPswds)
         {
             if (HasCorrectPasswordFormat(newPswds) == true && CurrentPassword(currentPswds) == true)
             {
