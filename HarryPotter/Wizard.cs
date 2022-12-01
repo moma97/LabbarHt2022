@@ -17,6 +17,7 @@ namespace HarryPotter
 
         public string Name { get; set; } //trollkarens namn
 
+        
 
         public void WizzyBloodStatus()
         {
@@ -107,13 +108,39 @@ namespace HarryPotter
                 }
 
             }
-
-        
+                   
 
             return false;
         }
        
-        
+        public bool DumbledoresArmy()
+        {
+
+            if (!DeathEater)
+            {
+                Random random= new Random();
+                int randomDE = random.Next(1, 101);
+                if (randomDE > 0 && randomDE <= 45) 
+                { 
+                    DumbledoorsArmy = true;
+                
+                }
+
+            }
+            if (DeathEater)
+            {
+                Random random = new Random();
+                int randomDE = random.Next(1, 101);
+                if (randomDE > 0 && randomDE <= 25)
+                {
+                    DumbledoorsArmy = true;
+
+                }
+
+            }
+
+            return false;
+        }
             
            
 

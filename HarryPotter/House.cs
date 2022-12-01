@@ -17,14 +17,21 @@ namespace HarryPotter
 
         public string Mascot { get; set; }
 
-        public List<Wizard> Members { get; set; } = new List<Wizard>();
+        public List<Wizard> Members { get; protected set; } = new List<Wizard>();
 
         public string Password { get; protected set; } //vrf är den protected set?
 
-     
+        //public void AddtoList(string newWizzy)
+        //{
+        //     Members.Add(new Wizard());
+        //}
 
+        public House()
+        {
+            Members = new List<Wizard>();
 
-       
+        }
+
 
 
         public override string ToString()

@@ -21,15 +21,15 @@ namespace HarryPotter
     public partial class MainWindow : Window
     {
         Hogwarts hogwarts = new Hogwarts();
-        
 
-        /*House house= new House(); *///tog bort abstract ,vet ej om det blir kaos då? 
+
+        //House house= new House(); ///tog bort abstract ,vet ej om det blir kaos då? 
 
         House hufflepuff = new Hufflepuff();
         House gryffindor = new Gryffindor();
         House ravenclaw = new Ravenclaw();
         House slytherin = new Slytherin();
-
+        int count = 0;
 
         public MainWindow()
         {
@@ -42,6 +42,11 @@ namespace HarryPotter
 
         private void btnSortingHat_Click(object sender, RoutedEventArgs e)
         {
+            Wizard wizard= new Wizard();
+            hogwarts.SortingHat(wizard);
+
+            House house = hogwarts.SortingHat(wizard);
+
 
         }
 
@@ -51,17 +56,7 @@ namespace HarryPotter
 
         }
 
-        //private void ComboBoxItem_Selected(object sender, RoutedEventArgs e)
-        //{
-        //    string currentPassword = txtOldPassword.Text;
-        //        string newPassword = txtNewPassword.Text;
 
-
-        //    gryffindor.SetPassword(currentPassword, newPassword);
-        //    gryffindor.HasCorrectPasswordFormat(newPassword);
-
-
-        //}
 
         private void btnChangePassword_Click(object sender, RoutedEventArgs e)
         {
@@ -216,18 +211,43 @@ namespace HarryPotter
         private void btntesta_Click(object sender, RoutedEventArgs e)
         {
             Wizard wizard = new Wizard();
-            wizard.WizzyBloodStatus();
 
+
+            wizard.Name = txtNewWizardName.Text;
+
+            wizard.WizzyBloodStatus();
             wizard.WizzyDeathEater();
             wizard.DumbledoresArmy();
-        }
 
-        //private void AddWizzy()
-        //{
-        //    Wizard wizard = new Wizard();
-        //    wizard.WizzyBloodStatus();
+            txtName.Text = wizard.Name;
+
+          
+            if (wizard.DeathEater)
+            {
+                chkDeatheater.IsChecked = true;
+
+            }
+            if (wizard.DumbledoorsArmy)
+            {
+
+                chkArmy.IsChecked = true;
+            }
 
 
-        //}
+            
+          
+
+
+
+                            txtName.Clear();
+            chkArmy.IsChecked = false;
+            chkDeatheater.IsChecked = false;
+
+        } 
+
+      
+        
+
+
     }
 }

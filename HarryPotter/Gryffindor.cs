@@ -14,11 +14,23 @@ namespace HarryPotter
         {
             HouseGhost = "Nästan Huvudlöse Nick";
             Mascot = "Lejon";
-            //Members = null;
+            Members = null;
             Password = "en gullig gris";
+
+
+
+          
         }
 
-
+        public void DisplayList() 
+        {
+         
+            
+        
+        
+        }
+           
+        
 
     }
 }

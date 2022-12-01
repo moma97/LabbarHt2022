@@ -13,7 +13,7 @@ namespace HarryPotter
         {
             HouseGhost = "Den Gråa Damen";
             Mascot = "Örnen";
-            //Members = null;
+            Members = null;
             Password = "öron vax";
         }
     }
