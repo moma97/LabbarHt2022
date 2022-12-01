@@ -33,7 +33,7 @@ namespace HarryPotter
         }
 
 
-
+        
         private void btnSortingHat_Click(object sender, RoutedEventArgs e)
         {
            
