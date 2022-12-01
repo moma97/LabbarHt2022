@@ -26,7 +26,7 @@ namespace HarryPotter
         /// <returns></returns>
         public bool SetPassword(string currentPswds, string newPswds)
         {
-            if (HasCorrectPasswordFormat(newPswds) == true && CurrentPassword(currentPswds) == true)
+            if (HasCorrectPasswordFormat(newPswds) && CurrentPassword(currentPswds))
             {
                 Password = newPswds;
                 return true;
@@ -42,7 +42,7 @@ namespace HarryPotter
 
             if (lösen.Length >= 8)
             {
-                if (IsConsonant(lösen[0]) == true && IsConsonant(lösen[lösen.Length-1]) == true) 
+                if (IsConsonant(lösen[0]) && IsConsonant(lösen[lösen.Length-1])) 
                 {
                     return true;
                 }

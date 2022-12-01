@@ -21,15 +21,7 @@ namespace HarryPotter
     public partial class MainWindow : Window
     {
         Hogwarts hogwarts = new Hogwarts();
-        //Wizard wizard = new Wizard();
-        //House house = new House();
-
-
-
-        //House hufflepuff = new Hufflepuff();
-        //House gryffindor = new Gryffindor();
-        //House ravenclaw = new Ravenclaw();
-        //House slytherin = new Slytherin();
+        
         int count = 0;
 
         public MainWindow()
@@ -47,9 +39,8 @@ namespace HarryPotter
            
             Wizard wizard = new Wizard(txtNewWizardName.Text);
             House house = hogwarts.SortingHat(wizard); //vad gjorde vi här
-           
 
-            //txtName.Text = wizard.Name;
+
 
 
             if (wizard.DeathEater)
@@ -65,10 +56,10 @@ namespace HarryPotter
             }
             if (wizard.DeathEater == false)
             {
-                
+
                 chkDeatheater.IsChecked = false;
             }
-            if (wizard.DumbledoorsArmy== false) 
+            if (wizard.DumbledoorsArmy == false)
             {
                 chkArmy.IsChecked = false;
             }
@@ -114,54 +105,54 @@ namespace HarryPotter
 
             }
 
-        //    if (selectedItem == hogwarts.Hufflepuff)
+            if (selectedItem == hogwarts.Hufflepuff)
 
-        //    {
+            {
 
-        //        if (hufflepuff.SetPassword(currentPassword, newPassword) && hufflepuff.HasCorrectPasswordFormat(newPassword))
-        //        {
+                if (hogwarts.Hufflepuff.SetPassword(currentPassword, newPassword) && hogwarts.Hufflepuff.HasCorrectPasswordFormat(newPassword))
+                {
 
-        //            MessageBox.Show("Ditt lösenord har nu ändrats!");
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
-        //        }
-
-
-        //    }
-
-        //    if (selectedItem == hogwarts.Ravenclaw)
-
-        //    {
-        //        if (ravenclaw.SetPassword(currentPassword, newPassword) && ravenclaw.HasCorrectPasswordFormat(newPassword))
-        //        {
-
-        //            MessageBox.Show("Ditt lösenord har nu ändrats!");
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
-        //        }
+                    MessageBox.Show("Ditt lösenord har nu ändrats!");
+                }
+                else
+                {
+                    MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
+                }
 
 
-        //    }
+            }
 
-        //    if (selectedItem == hogwarts.Slytherin)
+            if (selectedItem == hogwarts.Ravenclaw)
 
-        //    {
-        //        if (slytherin.SetPassword(currentPassword, newPassword) && slytherin.HasCorrectPasswordFormat(newPassword))
-        //        {
+            {
+                if (hogwarts.Ravenclaw.SetPassword(currentPassword, newPassword) && hogwarts.Ravenclaw.HasCorrectPasswordFormat(newPassword))
+                {
 
-        //            MessageBox.Show("Ditt lösenord har nu ändrats!");
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
-        //        }
+                    MessageBox.Show("Ditt lösenord har nu ändrats!");
+                }
+                else
+                {
+                    MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
+                }
 
 
-        //    }
+            }
+
+            if (selectedItem == hogwarts.Slytherin)
+
+            {
+                if (hogwarts.Slytherin.SetPassword(currentPassword, newPassword) && hogwarts.Slytherin.HasCorrectPasswordFormat(newPassword))
+                {
+
+                    MessageBox.Show("Ditt lösenord har nu ändrats!");
+                }
+                else
+                {
+                    MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
+                }
+
+
+            }
 
 
 
@@ -182,32 +173,6 @@ namespace HarryPotter
 
 
 
-        //public void WizardValues()
-        //{
-
-        //    wizard.Name = txtNewWizardName.Text;
-
-        //    wizard.WizzyBloodStatus();
-        //    wizard.WizzyDeathEater();
-        //    wizard.DumbledoresArmy();
-
-        //    txtName.Text = wizard.Name;
-
-
-        //    if (wizard.DeathEater)
-        //    {
-        //        chkDeatheater.IsChecked = true;
-
-        //    }
-        //    if (wizard.DumbledoorsArmy)
-        //    {
-
-        //        chkArmy.IsChecked = true;
-        //    }
-
-
-
-        //}
 
         public void DisplayListgryff()
         {
