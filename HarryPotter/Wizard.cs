@@ -31,7 +31,6 @@ namespace HarryPotter
             if (whatBlood >= 40 && whatBlood <= 100)
             {
                 BloodStatus = "Halvblod";
-                //whatBlood = halvBlod;
                 MessageBox.Show(BloodStatus);
             }
 
@@ -64,15 +63,17 @@ namespace HarryPotter
         public bool WizzyDeathEater() 
         {
 
-          Random deathEater = new Random();
-            int isDeathEater = deathEater.Next(1, 101);
-
-            if (BloodStatus == "Halvblod")
+          
+            if (BloodStatus == "Halvblod" || BloodStatus == "Okänt")
             {
-                if (isDeathEater > 0 && isDeathEater <= 25) 
+               Random random= new Random();
+               int randomHalfblood = random.Next(1,101);
+                
+                                
+                if (randomHalfblood > 0 && randomHalfblood <= 25) 
                 {
                     
-                    DeathEater= true;
+                    DeathEater = true;
 
                 }       
 
@@ -81,7 +82,10 @@ namespace HarryPotter
 
             if (BloodStatus == "Mugglarfödd")
             {
-                if (isDeathEater >= 25 && isDeathEater <= 40)
+                Random random= new Random();
+                int randomMuggle = random.Next(1, 101);
+
+                if (randomMuggle >= 25 && randomMuggle <= 40)
                 {
 
                     DeathEater = true;
@@ -93,7 +97,9 @@ namespace HarryPotter
 
             if (BloodStatus == "Fullblod")
             {
-                if (isDeathEater > 40 && isDeathEater <= 100)
+                Random random= new Random();
+                int randomFullblood = random.Next(1, 101);
+                if (randomFullblood > 40 && randomFullblood <= 100)
                 {
 
                     DeathEater = true;
@@ -102,16 +108,7 @@ namespace HarryPotter
 
             }
 
-            if (BloodStatus == "Okänt")
-            {
-                if (isDeathEater > 0 && isDeathEater <= 25)
-                {
-
-                    DeathEater = true;
-
-                }
-
-            }
+        
 
             return false;
         }

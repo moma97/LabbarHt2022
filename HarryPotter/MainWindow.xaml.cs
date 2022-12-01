@@ -219,7 +219,7 @@ namespace HarryPotter
             wizard.WizzyBloodStatus();
 
             wizard.WizzyDeathEater();
-
+            wizard.DumbledoresArmy();
         }
 
         //private void AddWizzy()
