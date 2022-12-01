@@ -99,5 +99,6 @@
                 </GroupBox>
             </Grid>
         </Viewbox>
+        <Button x:Name="btntesta" Content="Button" HorizontalAlignment="Left" Margin="375,568,0,0" VerticalAlignment="Top" Click="btntesta_Click"/>
     </Grid>
 </Window>

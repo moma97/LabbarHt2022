@@ -22,6 +22,7 @@ namespace HarryPotter
     {
         Hogwarts hogwarts = new Hogwarts();
         
+
         /*House house= new House(); *///tog bort abstract ,vet ej om det blir kaos då? 
 
         House hufflepuff = new Hufflepuff();
@@ -67,52 +68,77 @@ namespace HarryPotter
             string currentPassword = txtOldPassword.Text;
             string newPassword = txtNewPassword.Text;
 
-
-            //if ((this.cboHouses.SelectedItem = gryffindor))
-            //{
-            //    if (gryffindor.SetPassword(currentPassword, newPassword) && gryffindor.HasCorrectPasswordFormat(newPassword))
-            //    {
-            //        gryffindor.SetPassword(currentPassword, newPassword);
-            //        MessageBox.Show("Ditt lösenord har nu ändrats!");
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
-            //    }
-
-            //}
-           
-            //if ((bool)(cboHouses.SelectedItem = hufflepuff))
-            //{
-            //    if (hufflepuff.SetPassword(currentPassword, newPassword) && hufflepuff.HasCorrectPasswordFormat(newPassword))
-            //    {
-            //        hufflepuff.SetPassword(currentPassword, newPassword);
-            //        MessageBox.Show("Ditt lösenord har nu ändrats!");
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
-            //    }
-
-
-            //}
-
           
 
             Object selectedItem = cboHouses.SelectedItem;
-            if (selectedItem == gryffindor) 
+            if (selectedItem == hogwarts.Gryffindor) 
             
             {
                 if (gryffindor.SetPassword(currentPassword, newPassword) && gryffindor.HasCorrectPasswordFormat(newPassword))
                 {
-                    gryffindor.SetPassword(currentPassword, newPassword);
+                   
                    MessageBox.Show("Ditt lösenord har nu ändrats!");
                 }
                 else
                 {
                   MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
                 }
+
+
             }
+
+            if (selectedItem == hogwarts.Hufflepuff)
+            
+            {
+
+                if (hufflepuff.SetPassword(currentPassword, newPassword) && hufflepuff.HasCorrectPasswordFormat(newPassword))
+                {
+                    
+                    MessageBox.Show("Ditt lösenord har nu ändrats!");
+                }
+                else
+                {
+                    MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
+                }
+
+
+            }
+
+            if (selectedItem == hogwarts.Ravenclaw)
+
+            {
+                if (ravenclaw.SetPassword(currentPassword, newPassword) && ravenclaw.HasCorrectPasswordFormat(newPassword))
+                {
+                   
+                    MessageBox.Show("Ditt lösenord har nu ändrats!");
+                }
+                else
+                {
+                    MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
+                }
+
+
+            }
+
+            if (selectedItem == hogwarts.Slytherin)
+
+            {
+                if (slytherin.SetPassword(currentPassword, newPassword) && slytherin.HasCorrectPasswordFormat(newPassword))
+                {
+                   
+                    MessageBox.Show("Ditt lösenord har nu ändrats!");
+                }
+                else
+                {
+                    MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
+                }
+
+
+            }
+
+
+
+
         }
 
 
@@ -187,6 +213,21 @@ namespace HarryPotter
 
         }
 
-       
+        private void btntesta_Click(object sender, RoutedEventArgs e)
+        {
+            Wizard wizard = new Wizard();
+            wizard.WizzyBloodStatus();
+
+            wizard.WizzyDeathEater();
+
+        }
+
+        //private void AddWizzy()
+        //{
+        //    Wizard wizard = new Wizard();
+        //    wizard.WizzyBloodStatus();
+
+
+        //}
     }
 }
