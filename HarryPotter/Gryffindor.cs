@@ -15,10 +15,7 @@ namespace HarryPotter
             HouseGhost = "Nästan Huvudlöse Nick";
             Mascot = "Lejon";
             Password = "en gullig gris";
-
-
-
-          
+                      
         }
 
       

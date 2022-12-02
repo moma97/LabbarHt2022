@@ -19,7 +19,7 @@ namespace HarryPotter
         public string Mascot { get; set; }
 
 
-        public string Password { get; protected set; } //vrf är den protected set?
+        public string Password { get; protected set; }
 
         public House() 
         
@@ -33,7 +33,7 @@ namespace HarryPotter
 
 
 
-        public override string ToString()
+        public override string ToString()  //vi vill visa de olika husen, barnen
         {
             return this.GetType().Name;
         }

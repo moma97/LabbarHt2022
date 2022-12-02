@@ -32,16 +32,12 @@ namespace HarryPotter
             MascotLabels();
         }
 
-
         
         private void btnSortingHat_Click(object sender, RoutedEventArgs e)
         {
-           
-            Wizard wizard = new Wizard(txtNewWizardName.Text);
-            House house = hogwarts.SortingHat(wizard); //vad gjorde vi här
-
-
-
+        
+            Wizard wizard = new Wizard(txtNewWizardName.Text); //skapar ett object av klassen wizard med namnet som indata 
+            House house = hogwarts.SortingHat(wizard); //house är en bas klass, metoden returnerar ett objekt av klassen house och det går därför att göra så
 
             if (wizard.DeathEater)
             {
@@ -64,17 +60,12 @@ namespace HarryPotter
                 chkArmy.IsChecked = false;
             }
 
-
-
             DisplayListgryff();
             DisplayListHuffle();
             DisplayListRaven();
-            DisplayListSlyth();
-
-                                    
+            DisplayListSlyth();                              
 
             MessageBox.Show($"{wizard} är numera medlem nr {house.Members.Count} i {house}. {house.HouseGhost} kommer ta väl hand om dig.");
-
         }
 
 
@@ -87,10 +78,8 @@ namespace HarryPotter
             string newPassword = txtNewPassword.Text;
 
 
-
             Object selectedItem = cboHouses.SelectedItem;
             if (selectedItem == hogwarts.Gryffindor)
-
             {
                 if (hogwarts.Gryffindor.SetPassword(currentPassword, newPassword) && hogwarts.Gryffindor.HasCorrectPasswordFormat(newPassword))
                 {
@@ -101,14 +90,12 @@ namespace HarryPotter
                 {
                     MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
                 }
-
-
             }
 
+
+
             if (selectedItem == hogwarts.Hufflepuff)
-
             {
-
                 if (hogwarts.Hufflepuff.SetPassword(currentPassword, newPassword) && hogwarts.Hufflepuff.HasCorrectPasswordFormat(newPassword))
                 {
 
@@ -118,12 +105,11 @@ namespace HarryPotter
                 {
                     MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
                 }
-
-
             }
 
-            if (selectedItem == hogwarts.Ravenclaw)
 
+
+            if (selectedItem == hogwarts.Ravenclaw)
             {
                 if (hogwarts.Ravenclaw.SetPassword(currentPassword, newPassword) && hogwarts.Ravenclaw.HasCorrectPasswordFormat(newPassword))
                 {
@@ -134,12 +120,11 @@ namespace HarryPotter
                 {
                     MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
                 }
-
-
             }
 
-            if (selectedItem == hogwarts.Slytherin)
 
+
+            if (selectedItem == hogwarts.Slytherin)
             {
                 if (hogwarts.Slytherin.SetPassword(currentPassword, newPassword) && hogwarts.Slytherin.HasCorrectPasswordFormat(newPassword))
                 {
@@ -150,12 +135,7 @@ namespace HarryPotter
                 {
                     MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
                 }
-
-
             }
-
-
-
 
         }
 
@@ -214,17 +194,17 @@ namespace HarryPotter
         {
 
             lblGryffindorMascot.Content = hogwarts.Gryffindor.Mascot;
-
             lblHufflepuffMascot.Content = hogwarts.Hufflepuff.Mascot;
             lblRavenclawMascot.Content = hogwarts.Ravenclaw.Mascot;
             lblSlytherinMascot.Content = hogwarts.Slytherin.Mascot;
 
-
         }
 
+
+        //https://www.codeproject.com/Questions/311720/Access-listbox-item-by-double-click 
         private void lstHufflepuff_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-                Wizard wizard = (Wizard)lstHufflepuff.SelectedItem;
+            Wizard wizard = (Wizard)lstHufflepuff.SelectedItem;
             chkDeatheater.IsChecked = wizard.DeathEater;
             chkArmy.IsChecked = wizard.DumbledoorsArmy;
             txtName.Text = wizard.Name;

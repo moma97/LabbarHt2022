@@ -15,7 +15,6 @@ namespace HarryPotter
         {
             HouseGhost = "Den Tjocke Munkbrodern";
             Mascot = "Grävling";
-           
             Password = "en ensam trollkarl";
 
         }

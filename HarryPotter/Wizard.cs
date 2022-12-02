@@ -9,15 +9,15 @@ namespace HarryPotter
 {
     internal class Wizard
     {
-        public string BloodStatus { get; set; } //renblod, halvblod, mugglarfödd, okänt 
+        public string BloodStatus { get; set; } 
 
-        public bool DeathEater { get; set; } //bool ja/nej
+        public bool DeathEater { get; set; } 
 
-        public bool DumbledoorsArmy { get; set; } //bool ja/nej
+        public bool DumbledoorsArmy { get; set; } 
 
-        public string Name { get; set; } //trollkarens namn
+        public string Name { get; set; } 
 
-        public Wizard(string name) //Varför deklarera i konstruktor??
+        public Wizard(string name) //när det skapas ett nytt objekt körs dessa, när man skapar en klass körs alltid denna konstuktor 
         {
 
 
@@ -35,7 +35,7 @@ namespace HarryPotter
             return Name;
         }
 
-        public void WizzyBloodStatus()
+        public void WizzyBloodStatus() 
         {
             Random bloodStatus = new Random();
          
