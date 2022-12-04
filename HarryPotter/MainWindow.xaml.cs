@@ -36,6 +36,7 @@ namespace HarryPotter
         private void btnSortingHat_Click(object sender, RoutedEventArgs e)
         {
         
+            //qwe
             Wizard wizard = new Wizard(txtNewWizardName.Text); //skapar ett object av klassen wizard med namnet som indata 
             House house = hogwarts.SortingHat(wizard); //house är en bas klass, metoden returnerar ett objekt av klassen house och det går därför att göra så
 
