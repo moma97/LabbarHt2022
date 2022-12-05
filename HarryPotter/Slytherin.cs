@@ -18,24 +18,7 @@ namespace HarryPotter
         }
      
 
-        /// <summary>
-        /// sätter nytt lösenord om man inmatat rätt nuvrande och fyller kriterierna för nya
-        /// </summary>
-        /// <param name="currentPswds"></param>
-        /// <param name="newPswds"></param>
-        /// <returns></returns>
-        public bool SetPassword(string currentPswds, string newPswds)
-        {
-            if (HasCorrectPasswordFormat(newPswds) && CurrentPassword(currentPswds))
-            {
-                Password = newPswds;
-                return true;
-                
-            }
-
-            
-            return false;
-        }
+       
         public override bool HasCorrectPasswordFormat(string lösen)
         {
 

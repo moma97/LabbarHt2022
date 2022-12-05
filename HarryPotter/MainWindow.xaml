@@ -89,7 +89,7 @@
 
                 <GroupBox Header="Byt lösenord" Grid.Row="3" Grid.Column="4"  Margin="0,40,20,10">
                     <StackPanel Margin="10">
-                        <ComboBox x:Name="cboHouses" SelectionChanged="cboHouses_SelectionChanged" />
+                        <ComboBox x:Name="cboHouses"  />
                         <Label Content="Nuvarande lösenord"/>
                         <TextBox x:Name="txtOldPassword" />
                         <Label Content="Nytt lösenord"/>

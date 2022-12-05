@@ -15,18 +15,16 @@ namespace HarryPotter
 
         public bool DumbledoorsArmy { get; set; } 
 
-        public string Name { get; set; } 
+        public string Name { get; set; }
+
+        Random random = new Random();
 
         public Wizard(string name) //när det skapas ett nytt objekt körs dessa, när man skapar en klass körs alltid denna konstuktor 
         {
-
-
             Name = name;
             WizzyBloodStatus();
             WizzyDeathEater();
-            DumbledoresArmy();
-                
-
+            DumbledoresArmy();              
 
         }
 
@@ -35,26 +33,28 @@ namespace HarryPotter
             return Name;
         }
 
+      
+
         public void WizzyBloodStatus() 
         {
-            Random bloodStatus = new Random();
+            int control = random.Next(100);
          
 
-            int whatBlood = bloodStatus.Next(1, 101);
+            //int whatBlood = bloodStatus.Next(1, 101);
 
-            if (whatBlood >= 40 && whatBlood <= 100)
+            if (control >= 40 && control <= 100)
             {
                 BloodStatus = "Halvblod";
                 
             }
 
-            if (whatBlood >= 15 && whatBlood <= 40)
+            if (control >= 15 && control <= 40)
             {
 
                 BloodStatus = "Mugglarfödd";
                 
             }
-            if (whatBlood >= 5 && whatBlood <= 15)
+            if (control >= 5 && control <= 15)
             {
 
                 BloodStatus = "Fullblod";
@@ -62,7 +62,7 @@ namespace HarryPotter
 
             }
 
-            if (whatBlood > 0 && whatBlood <= 5)
+            if (control > 0 && control <= 5)
             {
 
                 BloodStatus = "Okänt";
@@ -73,14 +73,14 @@ namespace HarryPotter
 
         }
 
-        public bool WizzyDeathEater() 
+        public void WizzyDeathEater() 
         {
 
           
             if (BloodStatus == "Halvblod" || BloodStatus == "Okänt")
             {
-               Random random= new Random();
-               int randomHalfblood = random.Next(1,101);
+               
+               int randomHalfblood = random.Next(100);
                 
                                 
                 if (randomHalfblood > 0 && randomHalfblood <= 25) 
@@ -95,8 +95,8 @@ namespace HarryPotter
 
             if (BloodStatus == "Mugglarfödd")
             {
-                Random random= new Random();
-                int randomMuggle = random.Next(1, 101);
+                
+                int randomMuggle = random.Next(100);
 
                 if (randomMuggle >= 25 && randomMuggle <= 40)
                 {
@@ -110,8 +110,8 @@ namespace HarryPotter
 
             if (BloodStatus == "Fullblod")
             {
-                Random random= new Random();
-                int randomFullblood = random.Next(1, 101);
+               
+                int randomFullblood = random.Next(100);
                 if (randomFullblood > 40 && randomFullblood <= 100)
                 {
 
@@ -122,16 +122,16 @@ namespace HarryPotter
             }
                    
 
-            return false;
+        
         }
        
-        public bool DumbledoresArmy()
+        public void DumbledoresArmy()
         {
 
             if (!DeathEater)
             {
-                Random random= new Random();
-                int randomDE = random.Next(1, 101);
+                
+                int randomDE = random.Next(100);
                 if (randomDE > 0 && randomDE <= 45) 
                 { 
                     DumbledoorsArmy = true;
@@ -141,8 +141,8 @@ namespace HarryPotter
             }
             if (DeathEater)
             {
-                Random random = new Random();
-                int randomDE = random.Next(1, 101);
+                
+                int randomDE = random.Next(100);
                 if (randomDE > 0 && randomDE <= 25)
                 {
                     DumbledoorsArmy = true;
@@ -151,7 +151,7 @@ namespace HarryPotter
 
             }
 
-            return false;
+            
         }
             
            

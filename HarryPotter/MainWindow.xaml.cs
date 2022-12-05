@@ -36,7 +36,7 @@ namespace HarryPotter
         private void btnSortingHat_Click(object sender, RoutedEventArgs e)
         {
         
-            //qwe
+            
             Wizard wizard = new Wizard(txtNewWizardName.Text); //skapar ett object av klassen wizard med namnet som indata 
             House house = hogwarts.SortingHat(wizard); //house är en bas klass, metoden returnerar ett objekt av klassen house och det går därför att göra så
 
@@ -69,8 +69,7 @@ namespace HarryPotter
             MessageBox.Show($"{wizard} är numera medlem nr {house.Members.Count} i {house}. {house.HouseGhost} kommer ta väl hand om dig.");
         }
 
-
-
+         
 
 
         private void btnChangePassword_Click(object sender, RoutedEventArgs e)
@@ -78,67 +77,12 @@ namespace HarryPotter
             string currentPassword = txtOldPassword.Text;
             string newPassword = txtNewPassword.Text;
 
-
-            Object selectedItem = cboHouses.SelectedItem;
-            if (selectedItem == hogwarts.Gryffindor)
-            {
-                if (hogwarts.Gryffindor.SetPassword(currentPassword, newPassword) && hogwarts.Gryffindor.HasCorrectPasswordFormat(newPassword))
-                {
-
-                    MessageBox.Show("Ditt lösenord har nu ändrats!");
-                }
-                else
-                {
-                    MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
-                }
-            }
-
-
-
-            if (selectedItem == hogwarts.Hufflepuff)
-            {
-                if (hogwarts.Hufflepuff.SetPassword(currentPassword, newPassword) && hogwarts.Hufflepuff.HasCorrectPasswordFormat(newPassword))
-                {
-
-                    MessageBox.Show("Ditt lösenord har nu ändrats!");
-                }
-                else
-                {
-                    MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
-                }
-            }
-
-
-
-            if (selectedItem == hogwarts.Ravenclaw)
-            {
-                if (hogwarts.Ravenclaw.SetPassword(currentPassword, newPassword) && hogwarts.Ravenclaw.HasCorrectPasswordFormat(newPassword))
-                {
-
-                    MessageBox.Show("Ditt lösenord har nu ändrats!");
-                }
-                else
-                {
-                    MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
-                }
-            }
-
-
-
-            if (selectedItem == hogwarts.Slytherin)
-            {
-                if (hogwarts.Slytherin.SetPassword(currentPassword, newPassword) && hogwarts.Slytherin.HasCorrectPasswordFormat(newPassword))
-                {
-
-                    MessageBox.Show("Ditt lösenord har nu ändrats!");
-                }
-                else
-                {
-                    MessageBox.Show("Antingen matchar inte lösenorden med varandra, eller så har det nya lösenordet felaktigt format");
-                }
-            }
-
+            House house = (House)cboHouses.SelectedItem;
+            house.SetPassword(currentPassword, newPassword);
+           
         }
+
+    
 
 
 
@@ -186,10 +130,7 @@ namespace HarryPotter
 
 
 
-        private void cboHouses_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+        
 
         private void MascotLabels()
         {
@@ -200,6 +141,8 @@ namespace HarryPotter
             lblSlytherinMascot.Content = hogwarts.Slytherin.Mascot;
 
         }
+
+
 
 
         //https://www.codeproject.com/Questions/311720/Access-listbox-item-by-double-click 
@@ -238,5 +181,9 @@ namespace HarryPotter
             txtName.Text = wizard.Name;
             txtNewWizardName.Clear();
         }
+
+   
+
+
     }
 }
