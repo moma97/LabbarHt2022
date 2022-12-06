@@ -67,8 +67,14 @@ namespace HarryPotter
             DisplayListSlyth();                              
 
             MessageBox.Show($"{wizard} är numera medlem nr {house.Members.Count} i {house}. {house.HouseGhost} kommer ta väl hand om dig.");
-        }
 
+           
+            Ollivanders ollivanders = new Ollivanders();
+            ollivanders.WhatWood(wizard);
+            txtWandWood.Text = wizard.Wand;
+            ollivanders.LettersInName(wizard);
+        }
+     
          
 
 

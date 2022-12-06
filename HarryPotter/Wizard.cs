@@ -17,6 +17,10 @@ namespace HarryPotter
 
         public string Name { get; set; }
 
+        public string Wand { get; set; }
+
+
+
         Random random = new Random();
 
         public Wizard(string name) //när det skapas ett nytt objekt körs dessa, när man skapar en klass körs alltid denna konstuktor 
