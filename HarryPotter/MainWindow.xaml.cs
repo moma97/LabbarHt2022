@@ -21,8 +21,8 @@ namespace HarryPotter
     public partial class MainWindow : Window
     {
         Hogwarts hogwarts = new Hogwarts();
-        
-        
+        Ollivanders ollivanders = new Ollivanders();
+
         public MainWindow()
         {
 
@@ -37,6 +37,7 @@ namespace HarryPotter
         
             
             Wizard wizard = new Wizard(txtNewWizardName.Text); //skapar ett object av klassen wizard med namnet som indata 
+           
             House house = hogwarts.SortingHat(wizard); //house är en bas klass, metoden returnerar ett objekt av klassen house och det går därför att göra så
           
             DisplayCheckedorNot(wizard);
@@ -49,10 +50,29 @@ namespace HarryPotter
             MessageBox.Show($"{wizard} är numera medlem nr {house.Members.Count} i {house}. {house.HouseGhost} kommer ta väl hand om dig.");
 
            
-            Ollivanders ollivanders = new Ollivanders();
+           
             ollivanders.WhatWood(wizard);
             txtWandWood.Text = wizard.Wand;
-            ollivanders.LettersInName(wizard);
+            ollivanders.WandLenght(wizard);
+            txtWandLength.Text = ollivanders.WandLenght(wizard).ToString();
+
+           
+            if (ollivanders.Core(wizard) <= 3)
+            {
+                txtWandCore.Text = "Drakhjärtesträng";
+
+            }
+            else if (ollivanders.Core(wizard) >= 4 && ollivanders.Core(wizard) <= 6)
+            {
+
+                txtWandCore.Text = "Fenixstjärtfäder";
+
+            }
+            else if (ollivanders.Core(wizard) >= 7 && ollivanders.Core(wizard) <= 9)
+            {
+                txtWandCore.Text = "Enhörningshår";
+            }
+            else MessageBox.Show("Error");
         }
      
          
@@ -141,10 +161,22 @@ namespace HarryPotter
         //https://www.codeproject.com/Questions/311720/Access-listbox-item-by-double-click 
         private void lstHufflepuff_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+           
+            Ollivanders ollivanders= new Ollivanders();
+
             Wizard wizard = (Wizard)lstHufflepuff.SelectedItem;
             chkDeatheater.IsChecked = wizard.DeathEater;
             chkArmy.IsChecked = wizard.DumbledoorsArmy;
             txtName.Text = wizard.Name;
+            
+           
+            txtWandWood.Text = ollivanders.WhatWood(wizard);
+
+            DisplayCoreName(wizard);
+            txtWandLength.Text =ollivanders.WandLenght(wizard).ToString();
+
+
+
             txtNewWizardName.Clear();
         }
 
@@ -154,6 +186,12 @@ namespace HarryPotter
             chkDeatheater.IsChecked = wizard.DeathEater;
             chkArmy.IsChecked = wizard.DumbledoorsArmy;
             txtName.Text = wizard.Name;
+
+            txtWandWood.Text = ollivanders.WhatWood(wizard);
+            DisplayCoreName(wizard);
+            txtWandLength.Text = ollivanders.WandLenght(wizard).ToString();
+
+
             txtNewWizardName.Clear();
         }
 
@@ -163,6 +201,12 @@ namespace HarryPotter
             chkDeatheater.IsChecked = wizard.DeathEater;
             chkArmy.IsChecked = wizard.DumbledoorsArmy;
             txtName.Text = wizard.Name;
+
+            txtWandWood.Text = ollivanders.WhatWood(wizard);
+            DisplayCoreName(wizard);
+            txtWandLength.Text = ollivanders.WandLenght(wizard).ToString();
+
+
             txtNewWizardName.Clear();
         }
 
@@ -172,11 +216,18 @@ namespace HarryPotter
             chkDeatheater.IsChecked = wizard.DeathEater;
             chkArmy.IsChecked = wizard.DumbledoorsArmy;
             txtName.Text = wizard.Name;
+
+            txtWandWood.Text = ollivanders.WhatWood(wizard);
+            DisplayCoreName(wizard);
+            txtWandLength.Text = ollivanders.WandLenght(wizard).ToString();
+
+
             txtNewWizardName.Clear();
         }
 
         private void DisplayCheckedorNot(Wizard wizard)
         {
+            txtName.Text = wizard.Name;
             if (wizard.DeathEater)
             {
                 chkDeatheater.IsChecked = true;
@@ -199,6 +250,28 @@ namespace HarryPotter
 
         }
         
+        private void DisplayCoreName(Wizard wizard)
+        {
+                    
+
+            if (ollivanders.Core(wizard) <= 3)
+            {
+                txtWandCore.Text = "Drakhjärtesträng";
+
+            }
+            else if (ollivanders.Core(wizard) >= 4 && ollivanders.Core(wizard) <= 6)
+            {
+
+                txtWandCore.Text = "Fenixstjärtfäder";
+
+            }
+            else if (ollivanders.Core(wizard) >= 7 && ollivanders.Core(wizard) <= 9)
+            {
+                txtWandCore.Text = "Enhörningshår";
+            }
+
+
+        }
 
     }
 }
