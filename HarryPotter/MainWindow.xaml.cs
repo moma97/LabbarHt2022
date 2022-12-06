@@ -22,8 +22,7 @@ namespace HarryPotter
     {
         Hogwarts hogwarts = new Hogwarts();
         
-        //int count = 0;
-
+        
         public MainWindow()
         {
 
@@ -39,27 +38,8 @@ namespace HarryPotter
             
             Wizard wizard = new Wizard(txtNewWizardName.Text); //skapar ett object av klassen wizard med namnet som indata 
             House house = hogwarts.SortingHat(wizard); //house är en bas klass, metoden returnerar ett objekt av klassen house och det går därför att göra så
-
-            if (wizard.DeathEater)
-            {
-                chkDeatheater.IsChecked = true;
-
-            }
-
-            if (wizard.DumbledoorsArmy)
-            {
-
-                chkArmy.IsChecked = true;
-            }
-            if (wizard.DeathEater == false)
-            {
-
-                chkDeatheater.IsChecked = false;
-            }
-            if (wizard.DumbledoorsArmy == false)
-            {
-                chkArmy.IsChecked = false;
-            }
+          
+            DisplayCheckedorNot(wizard);
 
             DisplayListgryff();
             DisplayListHuffle();
@@ -195,7 +175,29 @@ namespace HarryPotter
             txtNewWizardName.Clear();
         }
 
-        
+        private void DisplayCheckedorNot(Wizard wizard)
+        {
+            if (wizard.DeathEater)
+            {
+                chkDeatheater.IsChecked = true;
+            }
+
+            if (wizard.DumbledoorsArmy)
+            {
+
+                chkArmy.IsChecked = true;
+            }
+            if (wizard.DeathEater == false)
+            {
+
+                chkDeatheater.IsChecked = false;
+            }
+            if (wizard.DumbledoorsArmy == false)
+            {
+                chkArmy.IsChecked = false;
+            }
+
+        }
         
 
     }

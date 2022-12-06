@@ -46,29 +46,33 @@ namespace HarryPotter
             if (whatBlood > 40 && whatBlood <= 100)
             {
                 BloodStatus = "Halvblod";
-                
+
             }
 
-            if (whatBlood > 15 && whatBlood <= 40)
+            else if (whatBlood > 15 && whatBlood <= 40)
             {
 
                 BloodStatus = "Mugglarfödd";
-                
+
             }
-            if (whatBlood > 5 && whatBlood <= 15)
+            else if (whatBlood > 5 && whatBlood <= 15)
             {
 
                 BloodStatus = "Fullblod";
-                
+
 
             }
 
-            if (whatBlood <= 5)
+            else if (whatBlood <= 5)
             {
 
                 BloodStatus = "Okänt";
-                
+
             }
+
+                
+                
+            
 
 
 
@@ -85,14 +89,14 @@ namespace HarryPotter
             }
 
 
-            if (BloodStatus == "Mugglarfödd" && randomHalfblood <= 15)
+            else if (BloodStatus == "Mugglarfödd" && randomHalfblood <= 15)
             {                                                          
                     DeathEater = true;
             
             }
 
 
-            if (BloodStatus == "Fullblod" && randomHalfblood <= 60)
+            else if (BloodStatus == "Fullblod" && randomHalfblood <= 60)
             {
                 DeathEater = true;
 
@@ -110,7 +114,7 @@ namespace HarryPotter
                     DumbledoorsArmy = true;                         
             }
            
-            if (DeathEater && randomDE <= 25)
+            else if (DeathEater && randomDE <= 25)
             {                                          
                     DumbledoorsArmy = true;               
             }
