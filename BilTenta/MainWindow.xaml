@@ -1,0 +1,17 @@
+﻿<Window x:Class="BilTenta.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BilTenta"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="txtTotalWeight" HorizontalAlignment="Left" Margin="131,113,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnCalc" Content="Button" HorizontalAlignment="Left" Margin="131,156,0,0" VerticalAlignment="Top" Click="btnCalc_Click"/>
+        <Label x:Name="lblsläpb" Content="B &#xD;&#xA;" HorizontalAlignment="Left" Margin="270,113,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblsläpub" Content="Utökad B &#xD;&#xA;" HorizontalAlignment="Left" Margin="270,166,0,0" VerticalAlignment="Top"/>
+        <Label Content="släpvikt B = 3500 - bilens totalvikt" HorizontalAlignment="Left" Margin="410,122,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

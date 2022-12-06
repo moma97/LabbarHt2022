@@ -39,6 +39,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HarryPotter", "HarryPotter\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "godiskalkylatorn", "godiskalkylatorn\godiskalkylatorn.csproj", "{4B024857-712B-41E4-A6FB-E2571944B951}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilTenta", "BilTenta\BilTenta.csproj", "{91816322-E6FC-427E-B8C7-77C64EFF56EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{4B024857-712B-41E4-A6FB-E2571944B951}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B024857-712B-41E4-A6FB-E2571944B951}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B024857-712B-41E4-A6FB-E2571944B951}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91816322-E6FC-427E-B8C7-77C64EFF56EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91816322-E6FC-427E-B8C7-77C64EFF56EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91816322-E6FC-427E-B8C7-77C64EFF56EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91816322-E6FC-427E-B8C7-77C64EFF56EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
