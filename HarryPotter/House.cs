@@ -51,11 +51,11 @@ namespace HarryPotter
                 {
 
                     Password = newPassword;
-                    MessageBox.Show("Ditt lösenord har nu ändrats!");
+                    
                     return true;
                     
                 }
-            MessageBox.Show("Antingen matchar inte lösenorden varandra, eller så har det nya lösenordet felaktigt format");
+            
             return false;
         }
 
@@ -79,7 +79,7 @@ namespace HarryPotter
                     }
                 }
             }
-            MessageBox.Show("Antingen matchar inte lösenorden varandra, eller så har det nya lösenordet felaktigt format");
+            
             return false;
 
         }

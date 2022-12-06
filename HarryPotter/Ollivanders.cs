@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 
 namespace HarryPotter
@@ -58,18 +59,29 @@ namespace HarryPotter
 
 
 
-        public int LettersInName(Wizard wizard)
+        public string LettersInName(Wizard wizard)
         {
             string wName = wizard.Name;
             string[] names = wName.Split(' ');
-            
-            names.Count();
+
+            // inspo https://www.w3resource.com/csharp-exercises/basic/csharp-basic-exercise-24.php
+            string name = "";
+            int ctr = 0;
+            foreach (string s in names)
+            {
+                if (s.Length > ctr) 
+                {
+                    name = s;
+                    ctr = s.Length;
+                }
+
+            }
 
             //int longestword = 0;
 
             //for (int i = 0; i < names.Length; i++)
             //{
-                                
+
 
 
             //}
@@ -95,7 +107,7 @@ namespace HarryPotter
             //    //{ 
             //    //    wordCount= name.Length;
             //    //    longWord= name;
-                    
+
             //    //}
             //    return name.Length;
             //}
@@ -109,7 +121,7 @@ namespace HarryPotter
             //}
 
 
-            return 0;
+            return name;
         }
 
         

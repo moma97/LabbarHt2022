@@ -20,7 +20,6 @@ namespace HarryPotter
         public string Wand { get; set; }
 
 
-
         Random random = new Random();
 
         public Wizard(string name) //när det skapas ett nytt objekt körs dessa, när man skapar en klass körs alltid denna konstuktor 
@@ -41,24 +40,22 @@ namespace HarryPotter
 
         public void WizzyBloodStatus() 
         {
-            int control = random.Next(100);
-         
+            
+            int whatBlood = random.Next(1, 101);
 
-            //int whatBlood = bloodStatus.Next(1, 101);
-
-            if (control >= 40 && control <= 100)
+            if (whatBlood > 40 && whatBlood <= 100)
             {
                 BloodStatus = "Halvblod";
                 
             }
 
-            if (control >= 15 && control <= 40)
+            if (whatBlood > 15 && whatBlood <= 40)
             {
 
                 BloodStatus = "Mugglarfödd";
                 
             }
-            if (control >= 5 && control <= 15)
+            if (whatBlood > 5 && whatBlood <= 15)
             {
 
                 BloodStatus = "Fullblod";
@@ -66,7 +63,7 @@ namespace HarryPotter
 
             }
 
-            if (control > 0 && control <= 5)
+            if (whatBlood <= 5)
             {
 
                 BloodStatus = "Okänt";
@@ -79,83 +76,44 @@ namespace HarryPotter
 
         public void WizzyDeathEater() 
         {
+            int randomHalfblood = random.Next(1, 101);
 
-          
-            if (BloodStatus == "Halvblod" || BloodStatus == "Okänt")
-            {
-               
-               int randomHalfblood = random.Next(100);
-                
-                                
-                if (randomHalfblood > 0 && randomHalfblood <= 25) 
-                {
-                    
+            if (BloodStatus == "Halvblod" || BloodStatus == "Okänt" && randomHalfblood <= 25)
+            {                                                                                                                         
                     DeathEater = true;
-
-                }       
-
+                      
             }
 
 
-            if (BloodStatus == "Mugglarfödd")
-            {
-                
-                int randomMuggle = random.Next(100);
-
-                if (randomMuggle >= 25 && randomMuggle <= 40)
-                {
-
+            if (BloodStatus == "Mugglarfödd" && randomHalfblood <= 15)
+            {                                                          
                     DeathEater = true;
-
-                }
-
+            
             }
 
 
-            if (BloodStatus == "Fullblod")
+            if (BloodStatus == "Fullblod" && randomHalfblood <= 60)
             {
-               
-                int randomFullblood = random.Next(100);
-                if (randomFullblood > 40 && randomFullblood <= 100)
-                {
-
-                    DeathEater = true;
-
-                }
+                DeathEater = true;
 
             }
-                   
-
-        
+            
+       
         }
        
         public void DumbledoresArmy()
         {
+            int randomDE = random.Next(1, 101);
 
-            if (!DeathEater)
-            {
-                
-                int randomDE = random.Next(100);
-                if (randomDE > 0 && randomDE <= 45) 
-                { 
-                    DumbledoorsArmy = true;
-                
-                }
-
+            if (!DeathEater && randomDE <= 45)
+            {                                            
+                    DumbledoorsArmy = true;                         
             }
-            if (DeathEater)
-            {
-                
-                int randomDE = random.Next(100);
-                if (randomDE > 0 && randomDE <= 25)
-                {
-                    DumbledoorsArmy = true;
-
-                }
-
+           
+            if (DeathEater && randomDE <= 25)
+            {                                          
+                    DumbledoorsArmy = true;               
             }
-
-            
         }
             
            

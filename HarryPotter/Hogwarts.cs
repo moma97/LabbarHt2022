@@ -25,7 +25,7 @@ namespace HarryPotter
 
 
         //för egenskapen tilldelar vi värden av gryff
-        public Hogwarts() //nyar upp egenskaperna gör att du får tillgång till klassernas properties //fråga till imorgon varför man måste göra såhär // 
+        public Hogwarts() //nyar upp egenskaperna gör att du får tillgång till klassernas properties 
         {
             Gryffindor = new Gryffindor();
             Hufflepuff = new Hufflepuff();
@@ -35,7 +35,7 @@ namespace HarryPotter
             //när man skapar ett objekt av klassen kommer dessa upp direkt. 
         }
 
-        //varför sätter vi class sortinghat, och wizard wizard i den? 
+       
         //för att kunna returnera ett house i main window skriver vi house innan sortinghat. vi stoppar in wizard wizar för att kunna använda det i main. 
         public House SortingHat(Wizard wizard)  //Indata är alltså en trollkarl och utdatat blir vilket elevhem som man hamnar i. "House" "Wizard",//använder klassen som datatyp
         {
@@ -46,14 +46,14 @@ namespace HarryPotter
                 count++;
                 return Hufflepuff;
             }
-            if (count == 1)
+            else  if (count == 1)
             {
                 Ravenclaw.Members.Add(wizard);
                 count++;
                 return Ravenclaw;
             }
 
-            if (count == 2)
+            else if (count == 2)
             {
                 count++;    
                 Gryffindor.Members.Add(wizard);

@@ -22,7 +22,7 @@ namespace HarryPotter
     {
         Hogwarts hogwarts = new Hogwarts();
         
-        int count = 0;
+        //int count = 0;
 
         public MainWindow()
         {
@@ -84,8 +84,15 @@ namespace HarryPotter
             string newPassword = txtNewPassword.Text;
 
             House house = (House)cboHouses.SelectedItem;
-            house.SetPassword(currentPassword, newPassword);
-           
+
+            
+            if (house.SetPassword(currentPassword, newPassword)) 
+            {
+
+                MessageBox.Show("Ditt lösenord har nu ändrats!");
+            }
+           else
+                MessageBox.Show("Antingen matchar inte lösenorden varandra, eller så har det nya lösenordet felaktigt format");
         }
 
     
@@ -188,8 +195,8 @@ namespace HarryPotter
             txtNewWizardName.Clear();
         }
 
-   
-
+        
+        
 
     }
 }
